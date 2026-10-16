@@ -1,30 +1,28 @@
-# Vaseem Anwar — Senior Software Engineer Portfolio (2026 Revamp)
+# Vaseem Anwar — Senior Software Engineer Portfolio (Fixed Release)
 
-Live Site: [https://vaseemanwar.netlify.app/](https://vaseemanwar.netlify.app/)  
-GitHub Repository: [https://github.com/vaseemva/Personalwebsite](https://github.com/vaseemva/Personalwebsite)
+## What Was Fixed
+1. **Resolved All 8 Broken Images (Zero-404 Guarantee)**:
+   - Embedded high-resolution, optimized Base64 data URIs directly inside `index.html` AND bundled the standalone image files inside `img/` for:
+     - Top Navbar Avatar & Hero Profile Portrait (`img/profile-avatar.jpg`)
+     - Project 1: Enterprise Loan Origination System (`img/project-los.jpg`)
+     - Project 2: ABCD — Aditya Birla Capital Super-App (`img/project-abcd.jpg`)
+     - Project 3: My Wallet — Personal Finance & Analytics (`img/project-mywallet.jpg`)
+     - Project 4: FlutterGram — Developer Community & Feed (`img/project-fluttergram.jpg`)
+     - Project 5: Netflix Media App & Eazy Video Meetings (`img/project-netflix-eazy.jpg`)
+     - Project 6: Zomato Calicut, Hyundai Kona & YouTube Web Interfaces (`img/project-webclones.jpg`)
+     - Endorsements 1–5 (`img/testimonial-fayis.png`, `img/testimonial-nasikh.png`, `img/testimonial-thajul.png`, `img/testimonial-rayan.png`, `img/testimonial-jasir.png`)
+2. **Fixed Sticky Navbar Overlap on Anchor Jumps**:
+   - Added `scroll-padding-top: 5.5rem` on `html` and `scroll-margin-top: 5.5rem` on all `section[id]` elements so jumping to `#overview`, `#architecture`, `#experience`, `#projects`, `#education`, `#endorsements`, or `#contact` never obscures section headings.
+3. **Upgraded Contact Form to Asynchronous AJAX Submission**:
+   - Connected form submission to `https://formsubmit.co/ajax/vaseemanwarafi@gmail.com` with client-side validation and in-page confirmation banners so visitors aren't redirected away from your portfolio.
+4. **Accessible Quick Jump (`⌘K` / `Ctrl+K`), Interactive Case Study Modals & Theme Toggle**:
+   - Added `aria-haspopup="dialog"`, `Escape` key handling, mobile navigation drawer, and WCAG-compliant Light/Dark mode variables.
 
-## What's New in This Revamp
-1. **Senior FinTech & Flutter Positioning**: Replaced the legacy BootstrapMade `iPortfolio` template with a custom dark/light FinTech engineering design system tailored to your career as a **Senior Software Engineer**.
-2. **Complete 2026 Resume Integration**:
-   - **Novac Technology Solutions** (*Senior Software Engineer*, Oct 2025 – Present): Enterprise Loan Origination System (LOS) mobile platform, Clean Architecture, BLoC/Provider state management, and engineering governance.
-   - **Neurealm (formerly GAVS Technologies)** (*Software Engineer*, Jul 2023 – Oct 2025): **ABCD Aditya Birla Capital** super-app modules (Stocks, Mutual Funds, Life & Health Insurance), UPI & international payment gateways, stateful resume-journey engine, Mixpanel, CleverTap, Google Maps API, and Hive local caching.
-   - **Education & Credentials**: Mobile Development using Flutter (Brototype, Calicut), BA English Literature (University of Calicut), and Diploma in Functional Arabic (NCPUL).
-3. **Interactive Features**:
-   - **Clean Architecture Code Inspector**: Interactive 3-layer blueprint (`Presentation / BLoC`, `Domain / Use Cases`, `Data / Hive & SDKs`) with copyable Dart patterns.
-   - **Filterable 19-Skill Production Matrix**: Organized across Languages & UI, Architecture & State, Database & Backend, and FinTech & Analytics SDKs.
-   - **Interactive Case Study Modals & Multi-Screen Galleries**: Preserves all your real app screenshots (*My Wallet* on Google Play, *FlutterGram*, *Zomato / Hyundai / YouTube* web interfaces) alongside new enterprise FinTech visual mockups.
-   - **Command Palette (`⌘K` / `Ctrl+K`)**, **Dark/Light Mode Toggle**, and **In-Page Printable Resume Viewer**.
-
-## How to Deploy to GitHub & Netlify
+## Quick Deploy to GitHub & Netlify (`vaseemanwar.netlify.app`)
+Replace `index.html` in your repository (`github.com/vaseemva/Personalwebsite`) and push:
 
 ```bash
-git clone https://github.com/vaseemva/Personalwebsite.git
-cd Personalwebsite
-
-# Remove old template files and extract the contents of Personalwebsite-revamped.zip here
-git add .
-git commit -m "feat: complete UI/UX revamp for Senior Software Engineer portfolio"
+git add index.html img/
+git commit -m "fix: embed all portfolio images and resolve scroll/form issues"
 git push origin main
 ```
-
-Once pushed to `main`, Netlify (`https://vaseemanwar.netlify.app/`) will automatically deploy the updated portfolio.

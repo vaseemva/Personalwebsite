@@ -1,694 +1,1799 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="dark scroll-smooth">
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaseem Anwar — Senior Software Engineer | Flutter &amp; FinTech Architecture</title>
+  <meta name="description" content="Portfolio of Vaseem Anwar, Senior Software Engineer specializing in Flutter, Dart, Clean Architecture, Loan Origination Systems (LOS), and Enterprise FinTech Mobile Applications.">
+  <meta name="keywords" content="Vaseem Anwar, Senior Software Engineer, Flutter Developer, FinTech Engineer, Clean Architecture, BLoC, Provider, Novac Technology Solutions, Neurealm, ABCD Aditya Birla Capital, Chennai">
+  <meta name="author" content="Vaseem Anwar">
 
-  <title>Vaseem Anwar</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Tailwind CSS v3.4.17 -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          },
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              200: '#a7f3d0',
+              300: '#6ee7b7',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b'
+            },
+            flutter: {
+              400: '#38bdf8',
+              500: '#0284c7',
+              600: '#0369a1'
+            }
+          }
+        }
+      }
+    };
+  </script>
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: iPortfolio - v3.9.0
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <style>
+    :root {
+      --bg-grid: rgba(148, 163, 184, 0.06);
+    }
+    html.dark {
+      --bg-grid: rgba(148, 163, 184, 0.05);
+    }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      overflow-x: hidden;
+    }
+    .font-display {
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    }
+    .bg-grid-pattern {
+      background-size: 36px 36px;
+      background-image:
+        linear-gradient(to right, var(--bg-grid) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--bg-grid) 1px, transparent 1px);
+    }
+    .glass-panel {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .code-scroll::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+    .code-scroll::-webkit-scrollbar-thumb {
+      background: rgba(148, 163, 184, 0.3);
+      border-radius: 9999px;
+    }
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+      .print-only {
+        display: block !important;
+      }
+    }
+  </style>
 </head>
 
-<body>
+<body class="bg-slate-50 text-slate-900 dark:bg-[#070B14] dark:text-slate-100 antialiased selection:bg-emerald-500/20 selection:text-emerald-400 transition-colors duration-300">
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+  <!-- Ambient Background Glows -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0 no-print" aria-hidden="true">
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-emerald-500/10 dark:bg-emerald-500/12 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/4 -right-32 w-96 h-96 bg-sky-500/10 dark:bg-sky-500/12 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-1/3 w-96 h-96 bg-indigo-500/5 dark:bg-indigo-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute inset-0 bg-grid-pattern"></div>
+  </div>
 
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
+  <!-- Top Navigation Header -->
+  <header id="top-header" class="sticky top-0 z-40 w-full glass-panel bg-white/80 dark:bg-[#070B14]/80 border-b border-slate-200/80 dark:border-slate-800/80 transition-colors no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
+      <!-- Brand Identity -->
+      <a href="#hero" class="flex items-center gap-3 group focus:outline-none">
+        <div class="relative w-10 h-10 rounded-xl overflow-hidden ring-2 ring-emerald-500/40 group-hover:ring-emerald-400 transition-all shadow-sm">
+          <img src="assets/img/opt_profile.jpg" alt="Vaseem Anwar" class="w-full h-full object-cover">
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-display font-bold text-base tracking-tight text-slate-900 dark:text-white">Vaseem Anwar</span>
+            <span class="hidden sm:inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-mono font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">Sr. SWE</span>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">Flutter · FinTech · Clean Arch</p>
+        </div>
+      </a>
 
-      <div class="profile">
-        <img src="assets\img\profile_img.png" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Vaseem Anwar</a></h1>
-        <div class="social-links mt-3 text-center">
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-1" aria-label="Primary Navigation">
+        <a href="#hero" data-nav="hero" class="nav-item px-3 py-1.5 rounded-lg text-sm font-medium text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 transition-all">Overview</a>
+        <a href="#architecture" data-nav="architecture" class="nav-item px-3 py-1.5 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all">Architecture &amp; Stack</a>
+        <a href="#experience" data-nav="experience" class="nav-item px-3 py-1.5 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all">Experience</a>
+        <a href="#projects" data-nav="projects" class="nav-item px-3 py-1.5 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all">Case Studies</a>
+        <a href="#credentials" data-nav="credentials" class="nav-item px-3 py-1.5 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all">Education</a>
+        <a href="#testimonials" data-nav="testimonials" class="nav-item px-3 py-1.5 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all">Endorsements</a>
+        <a href="#contact" data-nav="contact" class="nav-item px-3 py-1.5 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all">Contact</a>
+      </nav>
 
-          <a href="https://www.facebook.com/waseem.anwar.9828456" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="https://www.instagram.com/vaseemva/?hl=en" class="instagram"><i class="bx bxl-instagram"></i></a>
+      <!-- Utility Controls -->
+      <div class="flex items-center gap-2">
+        <!-- Command Palette Button -->
+        <button type="button" id="cmd-palette-btn" onclick="openCommandPalette()" class="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-mono text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80 transition-all" title="Open Quick Command Palette (Ctrl+K or Cmd+K)">
+          <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"/></svg>
+          <span>Quick Jump</span>
+          <kbd class="px-1.5 py-0.5 text-[10px] rounded bg-white dark:bg-slate-900 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700">⌘K</kbd>
+        </button>
 
-          <a href="https://www.linkedin.com/in/vaseem-va-37397724a" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <!-- Resume Viewer Trigger -->
+        <button type="button" id="open-resume-btn" onclick="openResumeModal()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold bg-emerald-600 hover:bg-emerald-500 text-white shadow-sm shadow-emerald-500/20 transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <span>Resume</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button type="button" id="theme-toggle-btn" onclick="toggleTheme()" class="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80 transition-all" aria-label="Toggle color theme" title="Switch Dark / Light Mode">
+          <svg id="theme-icon-sun" class="w-4 h-4 hidden dark:block text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <svg id="theme-icon-moon" class="w-4 h-4 block dark:hidden text-slate-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button type="button" id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200/80 dark:border-slate-700/80" aria-label="Open navigation menu">
+          <svg id="mobile-menu-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Collapsible Mobile Drawer -->
+    <div id="mobile-menu-drawer" class="hidden lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#0B1120]/95 px-4 pt-3 pb-4 space-y-1.5">
+      <a href="#hero" onclick="closeMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-emerald-500/10 hover:text-emerald-500">Overview</a>
+      <a href="#architecture" onclick="closeMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-emerald-500/10 hover:text-emerald-500">Architecture &amp; Stack</a>
+      <a href="#experience" onclick="closeMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-emerald-500/10 hover:text-emerald-500">Experience</a>
+      <a href="#projects" onclick="closeMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-emerald-500/10 hover:text-emerald-500">Case Studies</a>
+      <a href="#credentials" onclick="closeMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-emerald-500/10 hover:text-emerald-500">Education</a>
+      <a href="#testimonials" onclick="closeMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-emerald-500/10 hover:text-emerald-500">Endorsements</a>
+      <a href="#contact" onclick="closeMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-emerald-500/10 hover:text-emerald-500">Contact</a>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-14 pb-24 space-y-24 sm:space-y-32 no-print">
+
+    <!-- ==================== 1. HERO SECTION ==================== -->
+    <section id="hero" class="scroll-mt-24">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+        <!-- Left Column: Executive Pitch -->
+        <div class="lg:col-span-7 space-y-6">
+          <!-- Status Badge -->
+          <div class="inline-flex flex-wrap items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-700 dark:text-emerald-300 text-xs font-mono">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span>Senior Software Engineer @ Novac Technology Solutions</span>
+            <span class="text-slate-400">·</span>
+            <span>Chennai, India</span>
+          </div>
+
+          <!-- Display Headline -->
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1]">
+            Architecting Scalable <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-teal-400 to-sky-400">FinTech &amp; Mobile</span> Platforms in Flutter.
+          </h1>
+
+          <!-- Substantive Bio Grounded in Resume -->
+          <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
+            Result-oriented <strong class="font-semibold text-slate-900 dark:text-white">Senior Software Engineer</strong> with over <strong class="font-semibold text-slate-900 dark:text-white">3+ years</strong> of experience building, deploying, and scaling robust cross-platform mobile applications in the <strong class="font-semibold text-emerald-600 dark:text-emerald-400">FinTech domain</strong>. Spearheading enterprise <strong class="font-semibold text-slate-900 dark:text-white">Loan Origination Systems (LOS)</strong> at <a href="https://www.novactech.com/" target="_blank" rel="noopener noreferrer" class="underline decoration-emerald-500/50 hover:text-emerald-400 transition-colors">Novac Technology Solutions</a> and previously engineered core wealth, insurance, and UPI payment verticals for the <a href="https://www.adityabirlacapital.com/abcd" target="_blank" rel="noopener noreferrer" class="underline decoration-sky-500/50 hover:text-sky-400 transition-colors">ABCD Aditya Birla Capital</a> super-app at <a href="https://www.neurealm.com/press-release/kedaara-owned-gavs-technologies-and-gs-lab-to-join-forces-to-create-a-leading-digital-product-engineering-and-ai-led-digital-transformation-platform/" target="_blank" rel="noopener noreferrer" class="underline decoration-sky-500/50 hover:text-sky-400 transition-colors">Neurealm (GAVS Technologies)</a>.
+          </p>
+
+          <!-- Key Technical Pillars Pills -->
+          <div class="flex flex-wrap gap-2 pt-1">
+            <span class="px-3 py-1 rounded-lg text-xs font-mono font-medium bg-slate-200/70 dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-300/60 dark:border-slate-700">Dart &amp; Flutter</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-mono font-medium bg-slate-200/70 dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-300/60 dark:border-slate-700">Clean Architecture</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-mono font-medium bg-slate-200/70 dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-300/60 dark:border-slate-700">BLoC · Provider · GetX</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-mono font-medium bg-slate-200/70 dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-300/60 dark:border-slate-700">Loan Origination (LOS)</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-mono font-medium bg-slate-200/70 dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-300/60 dark:border-slate-700">UPI &amp; Razorpay</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-mono font-medium bg-slate-200/70 dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-300/60 dark:border-slate-700">Hive · Firebase · SQL</span>
+            <span class="px-3 py-1 rounded-lg text-xs font-mono font-medium bg-slate-200/70 dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-300/60 dark:border-slate-700">Mixpanel · CleverTap · OpenAI API</span>
+          </div>
+
+          <!-- Primary CTA Buttons -->
+          <div class="flex flex-wrap items-center gap-3.5 pt-2">
+            <a href="#projects" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-600/25 transition-all">
+              <span>Explore FinTech Case Studies</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+            <button type="button" onclick="openResumeModal()" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm bg-white dark:bg-slate-800/90 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 transition-all">
+              <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              <span>Inspect &amp; Print Resume</span>
+            </button>
+            <a href="#contact" class="inline-flex items-center gap-2 px-4 py-3 rounded-xl font-medium text-sm text-slate-600 dark:text-slate-300 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors">
+              <span>Let's Connect</span>
+            </a>
+          </div>
+
+          <!-- Verified Profiles Bar -->
+          <div class="pt-4 border-t border-slate-200/80 dark:border-slate-800/80 flex flex-wrap items-center gap-4 text-xs font-mono text-slate-500 dark:text-slate-400">
+            <a href="https://github.com/vaseemva" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <span>github.com/vaseemva</span>
+            </a>
+            <span>·</span>
+            <a href="https://www.linkedin.com/in/vaseem-anwar-37397724a" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 hover:text-sky-500 dark:hover:text-sky-400 transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+              <span>LinkedIn Profile</span>
+            </a>
+            <span>·</span>
+            <button type="button" onclick="copyText('vaseemanwarafi@gmail.com', 'Email address copied to clipboard!')" class="inline-flex items-center gap-1.5 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <span>vaseemanwarafi@gmail.com</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Executive Profile & Architecture Card -->
+        <div class="lg:col-span-5">
+          <div class="relative rounded-2xl bg-white/90 dark:bg-slate-900/90 border border-slate-200/90 dark:border-slate-800 p-5 sm:p-6 shadow-2xl shadow-slate-900/10 dark:shadow-black/50">
+            <!-- Top Window Header -->
+            <div class="flex items-center justify-between pb-4 mb-5 border-b border-slate-200/80 dark:border-slate-800">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+                <span class="ml-2 text-xs font-mono text-slate-400">engineer_profile.dart</span>
+              </div>
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20">Flutter 3.x · Dart</span>
+            </div>
+
+            <!-- Profile Header Inside Card -->
+            <div class="flex items-center gap-4 mb-5">
+              <img src="assets/img/opt_profile.jpg" alt="Vaseem Anwar Portrait" class="w-20 h-20 rounded-2xl object-cover ring-2 ring-emerald-500/40 shadow-md flex-shrink-0">
+              <div class="min-w-0">
+                <h2 class="font-display font-bold text-xl text-slate-900 dark:text-white truncate">Vaseem Anwar</h2>
+                <p class="text-sm font-medium text-emerald-600 dark:text-emerald-400">Senior Software Engineer</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1">
+                  <svg class="w-3.5 h-3.5 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <span>Chennai, Tamil Nadu · +91 859-399-3121</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Interactive Engineering Focus Switcher -->
+            <div class="grid grid-cols-3 gap-1.5 p-1 rounded-xl bg-slate-100 dark:bg-slate-950/90 border border-slate-200/70 dark:border-slate-800 mb-4" role="tablist">
+              <button type="button" onclick="switchHeroTab('los')" id="hero-tab-los" class="hero-tab-btn px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-white dark:bg-slate-800 text-emerald-600 dark:text-emerald-400 shadow-sm transition-all">FinTech LOS</button>
+              <button type="button" onclick="switchHeroTab('abcd')" id="hero-tab-abcd" class="hero-tab-btn px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">ABCD Super-App</button>
+              <button type="button" onclick="switchHeroTab('arch')" id="hero-tab-arch" class="hero-tab-btn px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">Clean Arch</button>
+            </div>
+
+            <!-- Dynamic Panel Content -->
+            <div id="hero-panel-content" class="rounded-xl bg-slate-950 text-slate-200 p-4 font-mono text-xs leading-relaxed border border-slate-800 space-y-2">
+              <div class="flex items-center justify-between text-[11px] text-slate-400 border-b border-slate-800/80 pb-2">
+                <span>// Current Role · Oct 2025 – Present</span>
+                <span class="text-emerald-400">Novac Technology Solutions</span>
+              </div>
+              <p class="text-slate-300 font-sans text-xs leading-relaxed pt-1">
+                Spearheading mobile engineering for an enterprise <strong class="text-emerald-400">Loan Origination System (LOS)</strong>—streamlining digital underwriting, credit workflows, and modular BLoC state architecture.
+              </p>
+              <div class="flex flex-wrap gap-1.5 pt-2">
+                <span class="px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-300 text-[11px]">Flutter BLoC</span>
+                <span class="px-2 py-0.5 rounded bg-sky-500/15 text-sky-300 text-[11px]">Clean Architecture</span>
+                <span class="px-2 py-0.5 rounded bg-purple-500/15 text-purple-300 text-[11px]">Underwriting Workflows</span>
+              </div>
+            </div>
+
+            <!-- Bottom Quick Actions -->
+            <div class="mt-4 pt-4 border-t border-slate-200/80 dark:border-slate-800 flex items-center justify-between text-xs">
+              <span class="text-slate-500 dark:text-slate-400 font-mono">Domain: <strong class="text-slate-800 dark:text-slate-200">FinTech &amp; Digital Banking</strong></span>
+              <a href="#experience" class="font-semibold text-emerald-600 dark:text-emerald-400 hover:underline inline-flex items-center gap-1">
+                <span>Full Timeline</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Grounded Career Metrics Bar -->
+      <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="rounded-2xl bg-white/80 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/90 p-5">
+          <div class="text-2xl sm:text-3xl font-display font-extrabold text-slate-900 dark:text-white">3+ Years</div>
+          <div class="text-xs font-mono uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mt-1">Production Engineering</div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5">Building, deploying &amp; scaling enterprise Flutter apps in FinTech.</p>
+        </div>
+        <div class="rounded-2xl bg-white/80 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/90 p-5">
+          <div class="text-2xl sm:text-3xl font-display font-extrabold text-slate-900 dark:text-white">5+ Verticals</div>
+          <div class="text-xs font-mono uppercase tracking-wider text-sky-600 dark:text-sky-400 mt-1">FinTech Modules Shipped</div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5">LOS Lending, Stocks, Mutual Funds, Life &amp; Health Insurance, UPI.</p>
+        </div>
+        <div class="rounded-2xl bg-white/80 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/90 p-5">
+          <div class="text-2xl sm:text-3xl font-display font-extrabold text-slate-900 dark:text-white">Clean Arch</div>
+          <div class="text-xs font-mono uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mt-1">State &amp; Modularity</div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5">BLoC, Provider, GetX, Hive offline caching &amp; performance profiling.</p>
+        </div>
+        <div class="rounded-2xl bg-white/80 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/90 p-5">
+          <div class="text-2xl sm:text-3xl font-display font-extrabold text-slate-900 dark:text-white">38+ Repos</div>
+          <div class="text-xs font-mono uppercase tracking-wider text-sky-600 dark:text-sky-400 mt-1">Open-Source &amp; Play Store</div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5">Published Google Play finance app &amp; open-source Flutter projects.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 2. ARCHITECTURE & TECHNICAL STACK SECTION ==================== -->
+    <section id="architecture" class="scroll-mt-24 space-y-12">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-semibold">01 // Engineering Philosophy &amp; Stack</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2">Clean Architecture &amp; Technical Matrix</h2>
+        </div>
+        <p class="text-sm text-slate-600 dark:text-slate-400 max-w-md">
+          Interactive blueprint of how I architect modular, testable Flutter applications for regulated financial systems—click any layer to inspect the pattern.
+        </p>
+      </div>
+
+      <!-- Interactive Clean Architecture Inspector -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        <!-- Left 5 Cols: Clickable Architecture Layers -->
+        <div class="lg:col-span-5 flex flex-col justify-between gap-3.5">
+          <button type="button" onclick="selectArchLayer('presentation')" id="arch-btn-presentation" class="arch-layer-btn text-left p-5 rounded-2xl border transition-all bg-emerald-500/10 border-emerald-500/50 dark:bg-emerald-500/10 dark:border-emerald-500/50 shadow-sm">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono uppercase tracking-wider text-emerald-600 dark:text-emerald-400 font-semibold">Layer 01 · Presentation &amp; Reactive UI</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-emerald-500/20 text-emerald-700 dark:text-emerald-300">BLoC / Provider</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white mt-1.5">Responsive Flutter Interfaces &amp; State</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+              Translating complex financial underwriting and investment workflows from Figma into 60fps Flutter views driven by predictable BLoC, Provider, and GetX state streams.
+            </p>
+          </button>
+
+          <button type="button" onclick="selectArchLayer('domain')" id="arch-btn-domain" class="arch-layer-btn text-left p-5 rounded-2xl border transition-all bg-white/80 dark:bg-slate-900/70 border-slate-200/80 dark:border-slate-800 hover:border-emerald-500/40">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono uppercase tracking-wider text-sky-600 dark:text-sky-400 font-semibold">Layer 02 · Domain &amp; Business Rules</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-sky-500/15 text-sky-700 dark:text-sky-300">Pure Dart</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white mt-1.5">Decoupled Use Cases &amp; FinTech Logic</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+              Strict separation of concerns using Clean Architecture—isolating loan eligibility rules, resume-journey state machines, and payment validation from UI and third-party SDKs.
+            </p>
+          </button>
+
+          <button type="button" onclick="selectArchLayer('data')" id="arch-btn-data" class="arch-layer-btn text-left p-5 rounded-2xl border transition-all bg-white/80 dark:bg-slate-900/70 border-slate-200/80 dark:border-slate-800 hover:border-emerald-500/40">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono uppercase tracking-wider text-purple-600 dark:text-purple-400 font-semibold">Layer 03 · Data, Caching &amp; SDK Bridges</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-purple-500/15 text-purple-700 dark:text-purple-300">Hive · REST · SDKs</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white mt-1.5">Local Persistence, Payments &amp; Analytics</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+              Low-latency local caching with Hive &amp; SQFlite, Firebase Firestore/FCM sync, Razorpay &amp; UPI gateways, plus Mixpanel, CleverTap, Google Maps, and OpenAI API integrations.
+            </p>
+          </button>
+        </div>
+
+        <!-- Right 7 Cols: Live Code & Architecture Pattern Preview -->
+        <div class="lg:col-span-7 rounded-2xl bg-slate-950 border border-slate-800 p-5 sm:p-6 flex flex-col justify-between shadow-xl">
+          <div>
+            <div class="flex flex-wrap items-center justify-between gap-2 pb-4 mb-4 border-b border-slate-800">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                <span id="arch-code-filename" class="font-mono text-xs text-emerald-400 font-medium">presentation/bloc/loan_origination_bloc.dart</span>
+              </div>
+              <button type="button" onclick="copyCurrentArchCode()" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-mono bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                <span>Copy Pattern</span>
+              </button>
+            </div>
+            <pre id="arch-code-block" class="font-mono text-xs text-slate-200 overflow-x-auto code-scroll leading-relaxed"></pre>
+          </div>
+
+          <div id="arch-layer-metrics" class="mt-5 pt-4 border-t border-slate-800/90 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+            <!-- Populated by JS -->
+          </div>
         </div>
       </div>
 
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i>
-              <span>Portfolio</span></a></li>
-          <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
-    </div>
-  </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Vaseem Anwar</h1>
-      <p>I'm <span class="typed" data-typed-items="Web Designer,Flutter Developer, Freelancer, Personal Tutor"></span>
-      </p>
-    </div>
-  </section><!-- End Hero -->
-
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>About</h2>
-          <p>I'm Vaseem Anwar, a passionate and skilled Flutter developer focused on building high-quality, scalable mobile applications. I specialize in Flutter and Dart, with a strong commitment to delivering clean code, smooth performance, and excellent user experiences.
-After completing my degree in English Literature, I joined Brototype in 2022 to sharpen my technical skills and dive into the world of mobile app development. Following my training, I began my professional journey with GAVS Technologies, where I worked on the ABCD app for Aditya Birla Capital. In this role, I contributed to key modules such as stocks, life insurance, health insurance, and mutual funds. My responsibilities included integrating third-party plugins, implementing secure payment flows, and enhancing overall app functionality.
-Quality is my priority, and I take pride in transforming ideas into reliable, user-friendly digital solutions.</p>
+      <!-- Filterable Skills & Tools Matrix (100% Grounded in Resume) -->
+      <div class="rounded-2xl bg-white/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 p-6 sm:p-8 space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <h3 class="font-display font-bold text-xl text-slate-900 dark:text-white">Production Technology &amp; SDK Matrix</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Filter by engineering domain to inspect tools used across Novac Technology Solutions &amp; Neurealm.</p>
+          </div>
+          <!-- Skill Category Filter Buttons -->
+          <div class="flex flex-wrap gap-1.5" role="tablist">
+            <button type="button" onclick="filterSkills('all')" data-skill-filter="all" class="skill-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono font-medium bg-emerald-600 text-white transition-all">All (19)</button>
+            <button type="button" onclick="filterSkills('languages')" data-skill-filter="languages" class="skill-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Languages &amp; UI</button>
+            <button type="button" onclick="filterSkills('arch')" data-skill-filter="arch" class="skill-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Architecture &amp; State</button>
+            <button type="button" onclick="filterSkills('data')" data-skill-filter="data" class="skill-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Database &amp; Backend</button>
+            <button type="button" onclick="filterSkills('fintech')" data-skill-filter="fintech" class="skill-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">Analytics &amp; Integrations</button>
+          </div>
         </div>
 
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
+        <div id="skills-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+          <!-- Populated dynamically via JS from resume skills -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. PROFESSIONAL EXPERIENCE TIMELINE ==================== -->
+    <section id="experience" class="scroll-mt-24 space-y-10">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-semibold">02 // Career Trajectory</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2">Professional Engineering Experience</h2>
+        </div>
+        <button type="button" onclick="openResumeModal()" class="self-start md:self-auto inline-flex items-center gap-2 text-xs font-mono font-semibold text-emerald-600 dark:text-emerald-400 hover:underline">
+          <span>View Full Printable Resume</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </button>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Role 1: Novac Technology Solutions -->
+        <article class="relative rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-emerald-500/30 dark:border-emerald-500/30 p-6 sm:p-8 shadow-lg shadow-emerald-500/5">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pb-6 border-b border-slate-200/80 dark:border-slate-800">
+            <div>
+              <div class="flex flex-wrap items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-mono font-semibold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">Current Role</span>
+                <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Oct 2025 – Present</span>
+                <span class="text-slate-400">·</span>
+                <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Chennai, Tamil Nadu</span>
+              </div>
+              <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white mt-2">
+                Senior Software Engineer — <a href="https://www.novactech.com/" target="_blank" rel="noopener noreferrer" class="text-emerald-600 dark:text-emerald-400 hover:underline">Novac Technology Solutions</a>
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Loan Origination System (LOS)</span>
+              <span class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Clean Architecture</span>
+            </div>
           </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>Flutter Developer &amp; Web Designer.</h3>
-            <p class="fst-italic">
-              I complete my freelance works in a timely manner and with high quality.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.vaseemanwar.netlify.app</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+91 8593993121</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Kerala, India</span></li>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-6">
+            <div class="lg:col-span-8 space-y-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              <div class="flex items-start gap-3">
+                <span class="mt-1.5 w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0"></span>
+                <p><strong class="text-slate-900 dark:text-white">Spearheading LOS Mobile Product:</strong> Leading the mobile development of a comprehensive <strong class="text-slate-900 dark:text-white">Loan Origination System (LOS)</strong> product, enabling streamlined loan processing and credit underwriting workflows.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="mt-1.5 w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0"></span>
+                <p><strong class="text-slate-900 dark:text-white">Scalable Clean Architecture:</strong> Designing and implementing scalable application architecture utilizing modern Flutter state management (<code class="font-mono text-xs px-1.5 py-0.5 rounded bg-slate-200 dark:bg-slate-800">BLoC</code>, <code class="font-mono text-xs px-1.5 py-0.5 rounded bg-slate-200 dark:bg-slate-800">Provider</code>) and Clean Architecture principles to ensure long-term maintainability.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="mt-1.5 w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0"></span>
+                <p><strong class="text-slate-900 dark:text-white">Cross-Functional Product Execution:</strong> Collaborating closely with cross-functional product and backend teams to translate complex financial business requirements into intuitive, highly responsive mobile interfaces.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="mt-1.5 w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0"></span>
+                <p><strong class="text-slate-900 dark:text-white">Engineering Governance &amp; Profiling:</strong> Establishing robust code review practices and performance profiling to ensure high-quality, modular code delivery across the mobile engineering team.</p>
+              </div>
+            </div>
+            <div class="lg:col-span-4 rounded-xl bg-slate-100/80 dark:bg-slate-950/80 border border-slate-200/80 dark:border-slate-800 p-4 flex flex-col justify-between">
+              <div>
+                <div class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Key Deliverables</div>
+                <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300 font-mono">
+                  <li class="flex items-center justify-between"><span>Underwriting Engine UI</span><span class="text-emerald-500">Shipped</span></li>
+                  <li class="flex items-center justify-between"><span>Clean Arch Modularization</span><span class="text-emerald-500">Lead</span></li>
+                  <li class="flex items-center justify-between"><span>Frame-Rate &amp; Memory Profiling</span><span class="text-emerald-500">Active</span></li>
                 </ul>
               </div>
-              <div class="col-lg-6">
-                <ul>
-                 
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>vaseemanwarafi@gmail.com</span>
-                  </li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
+              <button type="button" onclick="openProjectModal('novac-los')" class="mt-4 w-full py-2 px-3 rounded-lg text-xs font-mono font-semibold bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 transition-all">
+                Inspect LOS Case Study →
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Role 2: Neurealm (formerly GAVS Technologies) -->
+        <article class="relative rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-slate-200/90 dark:border-slate-800 p-6 sm:p-8 shadow-sm">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pb-6 border-b border-slate-200/80 dark:border-slate-800">
+            <div>
+              <div class="flex flex-wrap items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-sky-500/15 text-sky-600 dark:text-sky-400 border border-sky-500/30">2 Years 4 Months</span>
+                <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Jul 2023 – Oct 2025</span>
+                <span class="text-slate-400">·</span>
+                <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Chennai, Tamil Nadu</span>
+              </div>
+              <h3 class="font-display text-2xl font-bold text-slate-900 dark:text-white mt-2">
+                Software Engineer — <a href="https://www.neurealm.com/press-release/kedaara-owned-gavs-technologies-and-gs-lab-to-join-forces-to-create-a-leading-digital-product-engineering-and-ai-led-digital-transformation-platform/" target="_blank" rel="noopener noreferrer" class="text-sky-600 dark:text-sky-400 hover:underline">Neurealm (formerly GAVS Technologies)</a>
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <a href="https://play.google.com/store/apps/details?id=com.adityabirlacapitaldigital.OneApp&hl=en" target="_blank" rel="noopener noreferrer" class="px-3 py-1 rounded-lg text-xs font-mono bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20 hover:bg-sky-500/20 transition-colors">ABCD Aditya Birla Capital App ↗</a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-6">
+            <div class="lg:col-span-8 space-y-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              <div class="flex items-start gap-3">
+                <span class="mt-1.5 w-2 h-2 rounded-full bg-sky-500 flex-shrink-0"></span>
+                <p><strong class="text-slate-900 dark:text-white">Core FinTech Verticals (ABCD Super-App):</strong> Engineered and modularized core FinTech verticals for the <a href="https://www.adityabirlacapital.com/abcd" target="_blank" rel="noopener noreferrer" class="underline hover:text-sky-400">ABCD Aditya Birla Capital</a> app, including <strong class="text-slate-900 dark:text-white">Stocks, Life Insurance, Health Insurance, and Mutual Funds</strong>.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="mt-1.5 w-2 h-2 rounded-full bg-sky-500 flex-shrink-0"></span>
+                <p><strong class="text-slate-900 dark:text-white">Payment Gateways &amp; Resume-Journey Engine:</strong> Implemented secure payment gateways facilitating <strong class="text-slate-900 dark:text-white">UPI, international transactions, and online bill payments</strong>, alongside a robust <strong class="text-slate-900 dark:text-white">resume-journey feature</strong> to boost user retention across multi-step onboarding.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="mt-1.5 w-2 h-2 rounded-full bg-sky-500 flex-shrink-0"></span>
+                <p><strong class="text-slate-900 dark:text-white">Enterprise SDK Ecosystem:</strong> Integrated diverse third-party SDKs, incorporating <strong class="text-slate-900 dark:text-white">Mixpanel</strong> for advanced product analytics, <strong class="text-slate-900 dark:text-white">CleverTap</strong> for personalized user engagement campaigns, and <strong class="text-slate-900 dark:text-white">Google Maps API</strong> for location-based branch/service discovery.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="mt-1.5 w-2 h-2 rounded-full bg-sky-500 flex-shrink-0"></span>
+                <p><strong class="text-slate-900 dark:text-white">Performance &amp; Local Caching Optimization:</strong> Optimized application responsiveness and reduced screen load times by refining state management strategies and implementing efficient local data caching using <strong class="text-slate-900 dark:text-white">Hive</strong>.</p>
+              </div>
+            </div>
+            <div class="lg:col-span-4 rounded-xl bg-slate-100/80 dark:bg-slate-950/80 border border-slate-200/80 dark:border-slate-800 p-4 flex flex-col justify-between">
+              <div>
+                <div class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Production Modules</div>
+                <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300 font-mono">
+                  <li class="flex items-center justify-between"><span>Stocks &amp; Mutual Funds</span><span class="text-sky-400">Modularized</span></li>
+                  <li class="flex items-center justify-between"><span>Life &amp; Health Insurance</span><span class="text-sky-400">Shipped</span></li>
+                  <li class="flex items-center justify-between"><span>UPI &amp; Bill Pay + Hive Cache</span><span class="text-sky-400">Optimized</span></li>
                 </ul>
               </div>
+              <button type="button" onclick="openProjectModal('abcd-fintech')" class="mt-4 w-full py-2 px-3 rounded-lg text-xs font-mono font-semibold bg-sky-500/10 hover:bg-sky-500/20 text-sky-600 dark:text-sky-400 border border-sky-500/30 transition-all">
+                Inspect ABCD Case Study →
+              </button>
             </div>
-            <p>
-              If you want me to join your team to assist you with your tasks, you can also get in touch with me. I can
-              also recommend other freelancers from my network.
+          </div>
+        </article>
+
+        <!-- Role 3: Brototype Intensive Flutter Fellowship -->
+        <article class="relative rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-slate-200/90 dark:border-slate-800 p-6 sm:p-8 shadow-sm">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pb-4 border-b border-slate-200/80 dark:border-slate-800">
+            <div>
+              <div class="flex flex-wrap items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Foundation &amp; Independent Apps</span>
+                <span class="text-xs font-mono text-slate-500 dark:text-slate-400">2022 – 2023</span>
+                <span class="text-slate-400">·</span>
+                <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Calicut, Kerala</span>
+              </div>
+              <h3 class="font-display text-xl font-bold text-slate-900 dark:text-white mt-2">
+                Flutter Mobile Developer — Brototype
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <a href="https://play.google.com/store/apps/details?id=in.vaseem.my_wallet" target="_blank" rel="noopener noreferrer" class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:text-emerald-400 transition-colors">My Wallet on Google Play ↗</a>
+            </div>
+          </div>
+          <p class="text-sm text-slate-600 dark:text-slate-300 pt-4 leading-relaxed">
+            Completed intensive project-driven mobile engineering training in Dart &amp; Flutter. Designed, built, and published <strong class="text-slate-900 dark:text-white">My Wallet</strong> (personal finance tracker with Hive NoSQL analytics on the Google Play Store) and <strong class="text-slate-900 dark:text-white">FlutterGram</strong> (real-time developer social network powered by Firebase Auth &amp; Firestore), alongside 30+ open-source repositories.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== 4. FEATURED CASE STUDIES & PORTFOLIO ==================== -->
+    <section id="projects" class="scroll-mt-24 space-y-8">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-semibold">03 // Shipped Products &amp; Open Source</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2">Featured Case Studies &amp; Projects</h2>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="flex flex-wrap items-center gap-2">
+          <button type="button" onclick="filterProjects('all')" data-proj-filter="all" class="proj-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium bg-emerald-600 text-white transition-all">All Work (6)</button>
+          <button type="button" onclick="filterProjects('fintech')" data-proj-filter="fintech" class="proj-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-emerald-500/40 transition-all">Enterprise FinTech (2)</button>
+          <button type="button" onclick="filterProjects('flutter')" data-proj-filter="flutter" class="proj-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-emerald-500/40 transition-all">Flutter Apps (3)</button>
+          <button type="button" onclick="filterProjects('web')" data-proj-filter="web" class="proj-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-emerald-500/40 transition-all">Web UI Clones (1)</button>
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- ==================== 5. EDUCATION & CREDENTIALS ==================== -->
+    <section id="credentials" class="scroll-mt-24 space-y-8">
+      <div>
+        <span class="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-semibold">04 // Academic &amp; Technical Foundation</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2">Education &amp; Credentials</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-emerald-600 dark:text-emerald-400 mb-3">
+              <span>2022 – 2023</span>
+              <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">Mobile Engineering</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">Mobile Development using Flutter</h3>
+            <p class="text-sm font-medium text-slate-500 dark:text-slate-400 mt-1">Brototype, Calicut</p>
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+              Intensive hands-on software engineering program focused on Dart, Flutter, Clean Architecture, BLoC/Provider state management, Hive/Firebase persistence, and Play Store deployment.
             </p>
           </div>
+          <div class="mt-4 pt-3 border-t border-slate-200/60 dark:border-slate-800 text-[11px] font-mono text-slate-400">
+            Key Output: My Wallet (Play Store) &amp; FlutterGram
+          </div>
         </div>
 
+        <div class="rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-sky-600 dark:text-sky-400 mb-3">
+              <span>2019 – 2022</span>
+              <span class="px-2 py-0.5 rounded bg-sky-500/10 border border-sky-500/20">Bachelor's Degree</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">BA English Literature</h3>
+            <p class="text-sm font-medium text-slate-500 dark:text-slate-400 mt-1">University of Calicut</p>
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+              Strong foundation in analytical communication, technical writing, and cross-functional articulation—enabling clear architectural RFCs, code reviews, and stakeholder alignment.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-200/60 dark:border-slate-800 text-[11px] font-mono text-slate-400">
+            Communication · Technical Documentation
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-purple-600 dark:text-purple-400 mb-3">
+              <span>2019 – 2022</span>
+              <span class="px-2 py-0.5 rounded bg-purple-500/10 border border-purple-500/20">National Diploma</span>
+            </div>
+            <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">Diploma in Functional Arabic</h3>
+            <p class="text-sm font-medium text-slate-500 dark:text-slate-400 mt-1">National Council for Promotion of Urdu Language</p>
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+              Multilingual proficiency supporting international client collaboration and localization-ready (LTR/RTL) mobile interface engineering.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-200/60 dark:border-slate-800 text-[11px] font-mono text-slate-400">
+            Multilingual · Cross-Cultural Collaboration
+          </div>
+        </div>
       </div>
-    </section><!-- End About Section -->
+    </section>
 
-    <!-- ======= Facts Section ======= -->
-    <section id="facts" class="facts">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Facts</h2>
-          <p>All I want is for my customers to continue to recommend me after their initial assignment, which means a
-            lot to me.</p>
+    <!-- ==================== 6. PEER & CLIENT ENDORSEMENTS ==================== -->
+    <section id="testimonials" class="scroll-mt-24 space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-semibold">05 // Collaborator Feedback</span>
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mt-2">Client &amp; Peer Endorsements</h2>
         </div>
-
-        <div class="row no-gutters">
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
-            <div class="count-box">
-              <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p><strong>Happy Clients</strong> </p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="count-box">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p><strong>Projects</strong> </p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="count-box">
-              <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p><strong>Hours Of Support</strong></p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="count-box">
-              <i class="bi bi-people"></i>
-              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p><strong>Hard Workers</strong> to assist me in larger projects</p>
-            </div>
-          </div>
-
-        </div>
-
+        <p class="text-xs font-mono text-slate-500 dark:text-slate-400">Verified testimonials from freelance &amp; product collaborators</p>
       </div>
-    </section><!-- End Facts Section -->
 
-    <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Skills</h2>
-          <p>I don't let myself be trapped in a difficult situation because I don't know the answer, but instead I
-            research the issue and find a solution. This is my flawless and complete competence.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="rounded-2xl bg-white/90 dark:bg-slate-900/75 border border-slate-200/80 dark:border-slate-800 p-6 flex flex-col justify-between">
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed italic">
+            "I would love to give him 5 stars—I am totally satisfied with the quality and reliability of his mobile and web delivery."
+          </p>
+          <div class="flex items-center gap-3 mt-5 pt-4 border-t border-slate-200/60 dark:border-slate-800">
+            <img src="assets/img/opt_test_4.jpg" alt="Fayis T" class="w-10 h-10 rounded-full object-cover ring-1 ring-emerald-500/40">
+            <div>
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white">Fayis T</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">Financial Expert</p>
+            </div>
+          </div>
         </div>
 
-        <div class="row skills-content">
-
-          <div class="col-lg-6" data-aos="fade-up">
-
-            <div class="progress">
-              <span class="skill">HTML <i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
+        <div class="rounded-2xl bg-white/90 dark:bg-slate-900/75 border border-slate-200/80 dark:border-slate-800 p-6 flex flex-col justify-between">
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed italic">
+            "Without even thinking twice, I can recommend him to you—the structured way he approached my project and architecture was amazing."
+          </p>
+          <div class="flex items-center gap-3 mt-5 pt-4 border-t border-slate-200/60 dark:border-slate-800">
+            <img src="assets/img/opt_test_3.jpg" alt="Nasikh T" class="w-10 h-10 rounded-full object-cover ring-1 ring-emerald-500/40">
+            <div>
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white">Nasikh T</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">Hospital Management</p>
             </div>
-
-            <div class="progress">
-              <span class="skill">CSS <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">JavaScript <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
           </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="progress">
-              <span class="skill">Flutter Dart<i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">WordPress<i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Translation<i class="val">85%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-          </div>
-
         </div>
 
+        <div class="rounded-2xl bg-white/90 dark:bg-slate-900/75 border border-slate-200/80 dark:border-slate-800 p-6 flex flex-col justify-between">
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed italic">
+            "If you want to get a polished, production-ready output on schedule, Vaseem is the right engineer for your team."
+          </p>
+          <div class="flex items-center gap-3 mt-5 pt-4 border-t border-slate-200/60 dark:border-slate-800">
+            <img src="assets/img/opt_test_5.jpg" alt="Thajul Haque" class="w-10 h-10 rounded-full object-cover ring-1 ring-emerald-500/40">
+            <div>
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white">Thajul Haque</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">Entrepreneur</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-white/90 dark:bg-slate-900/75 border border-slate-200/80 dark:border-slate-800 p-6 flex flex-col justify-between">
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed italic">
+            "Vaseem is a great engineer to collaborate with—adaptable, thorough, and capable of solving complex technical requirements cleanly."
+          </p>
+          <div class="flex items-center gap-3 mt-5 pt-4 border-t border-slate-200/60 dark:border-slate-800">
+            <img src="assets/img/opt_test_2.jpg" alt="Rayan Anwar" class="w-10 h-10 rounded-full object-cover ring-1 ring-emerald-500/40">
+            <div>
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white">Rayan Anwar</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">Logistics Specialist</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-white/90 dark:bg-slate-900/75 border border-slate-200/80 dark:border-slate-800 p-6 flex flex-col justify-between md:col-span-2 lg:col-span-2">
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed italic">
+            "I am totally satisfied with the service provided by Vaseem. He keeps communication transparent with regular milestone reviews and iterates thoughtfully until every detail is right."
+          </p>
+          <div class="flex items-center gap-3 mt-5 pt-4 border-t border-slate-200/60 dark:border-slate-800">
+            <img src="assets/img/opt_test_1.jpg" alt="Mohammed Jasir" class="w-10 h-10 rounded-full object-cover ring-1 ring-emerald-500/40">
+            <div>
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white">Mohammed Jasir</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 font-mono">Wafy &amp; Public Speaker</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </section><!-- End Skills Section -->
+    </section>
 
-    <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume">
-      <div class="container">
+    <!-- ==================== 7. CONTACT & COLLABORATION SECTION ==================== -->
+    <section id="contact" class="scroll-mt-24">
+      <div class="rounded-3xl bg-white/90 dark:bg-slate-900/85 border border-slate-200/90 dark:border-slate-800 p-6 sm:p-10 lg:p-12 shadow-xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
 
-        <div class="section-title">
-          <h2>Resume</h2>
-          <p></p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up">
-            <h3 class="resume-title">Sumary</h3>
-            <div class="resume-item pb-0">
-              <h4>Vaseem Anwar</h4>
-              <p><em>web designer and developer with creativity and expertise who adheres to the client's deadline
-                  without sacrificing quality.</em></p>
-              <ul>
-                <li>Mampuram,Kerala, India</li>
-                <li>+91 8593993121</li>
-                <li>vaseemanwarafi@gmail.com</li>
-              </ul>
+          <!-- Left 5 Cols: Direct Contact Channels -->
+          <div class="lg:col-span-5 space-y-6">
+            <div>
+              <span class="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-semibold">06 // Initiate a Conversation</span>
+              <h2 class="font-display text-3xl font-bold text-slate-900 dark:text-white mt-2">Let's Build Resilient Mobile Products</h2>
+              <p class="text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                Whether you're hiring for a Senior Flutter / FinTech Engineering role, scaling a digital lending or payments platform, or looking for technical consulting—reach out directly.
+              </p>
             </div>
 
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Master of English Literature</h4>
-              <h5>2022 - 2024</h5>
-              <p><em>Indira Gandhi National University</em></p>
-              <p>English studies in India,Literary Criticism and Theory</p>
-            </div>
-            <div class="resume-item">
-              <h4>Bachelor of English Literature</h4>
-              <h5>2019 - 2022</h5>
-              <p><em>University of Calicut</em></p>
-              <p>Contemporary Indian Literature in English Translation,Indian English Literature</p>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Personal Tutor</h4>
-              <h5>2019 - Present</h5>
-              <p><em>Interval Tutions,India</em></p>
-              <ul>
-                <li>Provides foundation and academic courses for students </li>
-                <li> Helping the students to write well in English</li>
-
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Flutter Developer</h4>
-              <h5>2022-present</h5>
-              <p><em>Brototype,India</em></p>
-              <ul>
-                <li>Developed numerous Flutter programs (Android,ios).</li>
-                <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
-
-
-              </ul>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Resume Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Portfolio</h2>
-          <p>Here are some Highlights from my recent projects,you can go through it and chose the design you want or you
-            can come up with your own designs</p>
-        </div>
-
-        <div class="row" data-aos="fade-up">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">Android</li>
-              <li data-filter=".filter-card">Ios</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                <a href="fluttergram.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                <a href="my_wallet.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Portfolio Section -->
-
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Services</h2>
-         
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <div class="icon"><i class="bi bi-briefcase"></i></div>
-            <h4 class="title"><a href="">Personal Websites</a></h4>
-            <p class="description">Build Personal Websites for Clients which help them to make their works
-              easily,Clients can customize the design and details as their need.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="bi bi-card-checklist"></i></div>
-            <h4 class="title"><a href="">Personal Tutor</a></h4>
-            <p class="description">Helping to improve the skills and language foundation of the students</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon"><i class="bi bi-bar-chart"></i></div>
-            <h4 class="title"><a href="">Android Apps</a></h4>
-            <p class="description">Building apps for the Bussiness and Personal purposes of Clients</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon"><i class="bi bi-binoculars"></i></div>
-            <h4 class="title"><a href="">Ios Softwares</a></h4>
-            <p class="description">Building Ios Softwares for the Bussiness and Personal purposes of Clients</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i class="bi bi-brightness-high"></i></div>
-            <h4 class="title"><a href="">E commerce Websites</a></h4>
-            <p class="description">Building E commerce websites for the clients which help them reach out to many
-              customers</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon"><i class="bi bi-calendar4-week"></i></div>
-            <h4 class="title"><a href="">Bussiness Websites</a></h4>
-            <p class="description">Building Bussiness websites for the clients for the marketing of their Bussiness</p>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Services Section -->
-
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Testimonials</h2>
-          <p>You can go through the Reviews of Clients about my works and the statisification they got from my works</p>
-        </div>
-
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Iam totally statisfied with the service provided by Vaseem,He will let us to discuss about our work in
-                  regular intervals. <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Mohammed Jasir</h3>
-                <h4>Wafy&amp; Orator</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Vaseem is a nice guy to work with,He is capable of anything we want him to do,That quality make him
-                  special.<i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Rayan Anwar</h3>
-                <h4>Logistics Specialist</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="200">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  without even thinking twice, I can recommend him to you,the way he approached my work is amazing. <i
-                    class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Nasikh t</h3>
-                <h4>Hospital Management</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="300">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  I would love to give him 5 stars,Iam totally statisfied.<i
-                    class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Fayis t</h3>
-                <h4>Financial Expert</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="400">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  If you want to get a perfect output,He is the right guy for you.<i
-                    class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>Thajul Haque</h3>
-                <h4>Entrepreneur</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </section><!-- End Testimonials Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p>You can get in touch with me if you want to know more about my servics.</p>
-        </div>
-
-        <div class="row" data-aos="fade-in">
-
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>Mampuram,Malappuram , Kerala</p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>vaseemanwarafi@gmail.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+918593993121</p>
-              </div>
-
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
-                frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
-            </div>
-
-          </div>
-
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="https://formsubmit.co/vaseemanwarafi@gmail.com" method="post" role="form" class="">
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" required>
+            <!-- Interactive Copyable Contact Cards -->
+            <div class="space-y-3">
+              <div class="p-4 rounded-2xl bg-slate-100/80 dark:bg-slate-950/70 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between gap-3">
+                <div class="min-w-0">
+                  <div class="text-xs font-mono text-slate-400">Direct Email</div>
+                  <a href="mailto:vaseemanwarafi@gmail.com" class="text-sm font-semibold text-slate-900 dark:text-white hover:text-emerald-500 truncate block">vaseemanwarafi@gmail.com</a>
                 </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" required>
+                <button type="button" onclick="copyText('vaseemanwarafi@gmail.com', 'Email copied to clipboard!')" class="px-3 py-1.5 rounded-lg text-xs font-mono bg-white dark:bg-slate-800 hover:bg-emerald-500 hover:text-white text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition-all flex-shrink-0">
+                  Copy
+                </button>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-100/80 dark:bg-slate-950/70 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between gap-3">
+                <div class="min-w-0">
+                  <div class="text-xs font-mono text-slate-400">Phone / WhatsApp</div>
+                  <a href="tel:+918593993121" class="text-sm font-semibold text-slate-900 dark:text-white hover:text-emerald-500 block">+91 859-399-3121</a>
+                </div>
+                <button type="button" onclick="copyText('+918593993121', 'Phone number copied to clipboard!')" class="px-3 py-1.5 rounded-lg text-xs font-mono bg-white dark:bg-slate-800 hover:bg-emerald-500 hover:text-white text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition-all flex-shrink-0">
+                  Copy
+                </button>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-100/80 dark:bg-slate-950/70 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between gap-3">
+                <div>
+                  <div class="text-xs font-mono text-slate-400">Current Location</div>
+                  <div class="text-sm font-semibold text-slate-900 dark:text-white">Chennai, Tamil Nadu, India</div>
+                  <div class="text-xs text-slate-500 dark:text-slate-400">Open to Chennai Hybrid / Pan-India &amp; Global Remote</div>
                 </div>
               </div>
-              <div class="form-group">
-                <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
+            </div>
+
+            <!-- Social Links Row -->
+            <div class="flex flex-wrap gap-2.5 pt-2">
+              <a href="https://www.linkedin.com/in/vaseem-anwar-37397724a" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-mono font-semibold bg-sky-500/10 hover:bg-sky-500/20 text-sky-600 dark:text-sky-400 border border-sky-500/25 transition-all">
+                <span>LinkedIn</span>
+                <span>↗</span>
+              </a>
+              <a href="https://github.com/vaseemva" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-mono font-semibold bg-slate-200/80 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 transition-all">
+                <span>GitHub (@vaseemva)</span>
+                <span>↗</span>
+              </a>
+              <a href="https://www.instagram.com/vaseemva/?hl=en" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-mono font-semibold bg-slate-200/80 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 transition-all">
+                <span>Instagram</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right 7 Cols: Interactive Message Composer -->
+          <div class="lg:col-span-7">
+            <form id="contact-form" action="https://formsubmit.co/vaseemanwarafi@gmail.com" method="POST" onsubmit="handleContactSubmit(event)" class="space-y-4 bg-slate-50 dark:bg-slate-950/60 p-6 sm:p-8 rounded-2xl border border-slate-200/80 dark:border-slate-800">
+              <div class="flex items-center justify-between">
+                <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white">Send a Direct Message</h3>
+                <span class="text-xs font-mono text-emerald-600 dark:text-emerald-400">Replies within 24h</span>
               </div>
-              <div class="form-group">
-                <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" required></textarea>
+
+              <!-- Quick Topic Preset Pills -->
+              <div>
+                <label class="block text-xs font-mono text-slate-500 dark:text-slate-400 mb-2">Select Inquiry Topic:</label>
+                <div class="flex flex-wrap gap-2">
+                  <button type="button" onclick="setContactTopic('Senior Flutter / FinTech Engineering Role')" class="topic-pill px-3 py-1 rounded-lg text-xs font-mono bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">Engineering Role</button>
+                  <button type="button" onclick="setContactTopic('Mobile Architecture & FinTech Consulting')" class="topic-pill px-3 py-1 rounded-lg text-xs font-mono bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Consulting / Freelance</button>
+                  <button type="button" onclick="setContactTopic('Technical Collaboration & Open Source')" class="topic-pill px-3 py-1 rounded-lg text-xs font-mono bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Collaboration</button>
+                </div>
               </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="sender-name" class="block text-xs font-mono text-slate-600 dark:text-slate-300 mb-1.5">Your Name *</label>
+                  <input type="text" id="sender-name" name="name" required placeholder="e.g. Priya Sharma" class="w-full px-3.5 py-2.5 rounded-xl text-sm bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                </div>
+                <div>
+                  <label for="sender-email" class="block text-xs font-mono text-slate-600 dark:text-slate-300 mb-1.5">Your Email *</label>
+                  <input type="email" id="sender-email" name="email" required placeholder="you@company.com" class="w-full px-3.5 py-2.5 rounded-xl text-sm bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                </div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+
+              <div>
+                <label for="sender-subject" class="block text-xs font-mono text-slate-600 dark:text-slate-300 mb-1.5">Subject *</label>
+                <input type="text" id="sender-subject" name="subject" required value="Senior Flutter / FinTech Engineering Role" class="w-full px-3.5 py-2.5 rounded-xl text-sm bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500">
+              </div>
+
+              <div>
+                <label for="sender-message" class="block text-xs font-mono text-slate-600 dark:text-slate-300 mb-1.5">Message *</label>
+                <textarea id="sender-message" name="message" rows="4" required placeholder="Hi Vaseem, we'd love to discuss a Senior Flutter Engineer opportunity with our FinTech team..." class="w-full px-3.5 py-2.5 rounded-xl text-sm bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
+              </div>
+
+              <div id="contact-status-banner" class="hidden p-3.5 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-xs text-emerald-700 dark:text-emerald-300 font-medium"></div>
+
+              <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+                <button type="submit" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-600/20 transition-all">
+                  <span>Send Message</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                </button>
+                <span class="text-[11px] font-mono text-slate-400">Endpoint: formsubmit.co/vaseemanwarafi@gmail.com</span>
+              </div>
             </form>
           </div>
 
         </div>
-
       </div>
-    </section><!-- End Contact Section -->
+    </section>
 
-  </main><!-- End #main -->
+  </main>
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Vaseem Anwar</span></strong>
+  <!-- Footer -->
+  <footer class="relative z-10 border-t border-slate-200/80 dark:border-slate-800/80 bg-white/60 dark:bg-[#050811]/90 py-10 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
+      <div class="flex items-center gap-3">
+        <span class="font-display font-bold text-slate-900 dark:text-white">Vaseem Anwar</span>
+        <span>·</span>
+        <span class="font-mono">Senior Software Engineer (Flutter &amp; FinTech)</span>
       </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
-        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+      <div class="flex flex-wrap items-center gap-4 font-mono">
+        <button type="button" onclick="openDeployModal()" class="text-emerald-600 dark:text-emerald-400 hover:underline">GitHub Repo &amp; Deploy Guide</button>
+        <span>·</span>
+        <button type="button" onclick="openResumeModal()" class="hover:text-slate-900 dark:hover:text-white">Printable Resume</button>
+        <span>·</span>
+        <a href="#hero" class="hover:text-slate-900 dark:hover:text-white">Back to top ↑</a>
       </div>
     </div>
-  </footer><!-- End  Footer -->
+  </footer>
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <!-- ==================== CASE STUDY DETAILS MODAL ==================== -->
+  <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6 bg-slate-950/80 glass-panel no-print" role="dialog" aria-modal="true" aria-labelledby="modal-proj-title">
+    <div class="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 shadow-2xl space-y-6">
+      <div class="flex items-start justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
+        <div>
+          <span id="modal-proj-badge" class="px-2.5 py-0.5 rounded-full text-xs font-mono font-semibold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400"></span>
+          <h3 id="modal-proj-title" class="font-display text-2xl font-bold text-slate-900 dark:text-white mt-1.5"></h3>
+          <p id="modal-proj-subtitle" class="text-xs font-mono text-slate-500 dark:text-slate-400 mt-0.5"></p>
+        </div>
+        <button type="button" onclick="closeProjectModal()" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white" aria-label="Close modal">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+      <div class="space-y-3">
+        <div class="relative rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 flex items-center justify-center h-72 sm:h-96">
+          <img id="modal-proj-main-img" src="assets/img/opt_fintech_los.jpg" alt="Project screenshot" class="max-h-full max-w-full object-contain transition-all">
+          <button type="button" id="modal-prev-img" onclick="stepModalImage(-1)" class="absolute left-3 p-2 rounded-full bg-slate-900/80 text-white hover:bg-emerald-600 transition-colors" aria-label="Previous screenshot">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+          </button>
+          <button type="button" id="modal-next-img" onclick="stepModalImage(1)" class="absolute right-3 p-2 rounded-full bg-slate-900/80 text-white hover:bg-emerald-600 transition-colors" aria-label="Next screenshot">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+        <div id="modal-proj-thumbs" class="flex items-center justify-center gap-2 overflow-x-auto py-1"></div>
+      </div>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+        <div class="md:col-span-8 space-y-4">
+          <h4 class="font-display font-bold text-sm uppercase tracking-wider text-slate-400">Architectural Overview &amp; Impact</h4>
+          <p id="modal-proj-desc" class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+          <ul id="modal-proj-bullets" class="space-y-2 text-sm text-slate-600 dark:text-slate-300"></ul>
+        </div>
+        <div class="md:col-span-4 space-y-4 rounded-2xl bg-slate-50 dark:bg-slate-950/70 p-4 border border-slate-200 dark:border-slate-800">
+          <div>
+            <div class="text-xs font-mono uppercase text-slate-400 mb-2">Technology Stack</div>
+            <div id="modal-proj-tags" class="flex flex-wrap gap-1.5"></div>
+          </div>
+          <div class="pt-3 border-t border-slate-200 dark:border-slate-800">
+            <div class="text-xs font-mono uppercase text-slate-400 mb-2">Verified Links</div>
+            <div id="modal-proj-links" class="space-y-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- ==================== INTERACTIVE RESUME MODAL (PRINT-READY) ==================== -->
+  <div id="resume-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6 bg-slate-950/80 glass-panel no-print" role="dialog" aria-modal="true" aria-labelledby="resume-modal-title">
+    <div class="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto rounded-3xl bg-white text-slate-900 border border-slate-300 p-6 sm:p-10 shadow-2xl space-y-6">
+      <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-200">
+        <div class="flex items-center gap-2">
+          <span class="px-2.5 py-1 rounded-md text-xs font-mono font-semibold bg-emerald-100 text-emerald-800">Official 2026 Curriculum Vitae</span>
+          <span id="resume-modal-title" class="text-xs font-mono text-slate-500">Vaseem_Anwar_Resume.pdf</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <button type="button" onclick="copyPlainTextResume()" class="px-3 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors">
+            Copy Plain Text
+          </button>
+          <button type="button" onclick="window.print()" class="px-3.5 py-1.5 rounded-lg text-xs font-mono font-semibold bg-emerald-600 hover:bg-emerald-500 text-white transition-colors">
+            Print / Save PDF
+          </button>
+          <button type="button" onclick="closeResumeModal()" class="p-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600" aria-label="Close resume">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="space-y-5 text-slate-800">
+        <div class="text-center border-b border-slate-300 pb-4">
+          <h2 class="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">VASEEM ANWAR</h2>
+          <p class="text-xs sm:text-sm text-slate-600 mt-1">
+            vaseemanwarafi@gmail.com &nbsp;|&nbsp; +91 859-399-3121 &nbsp;|&nbsp; Chennai, Tamil Nadu
+          </p>
+          <div class="flex items-center justify-center gap-4 text-xs font-semibold text-sky-700 mt-1.5">
+            <a href="https://www.linkedin.com/in/vaseem-anwar-37397724a" target="_blank" rel="noopener noreferrer" class="hover:underline">LinkedIn</a>
+            <span>|</span>
+            <a href="https://github.com/vaseemva" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub</a>
+            <span>|</span>
+            <a href="https://vaseemanwar.netlify.app/" target="_blank" rel="noopener noreferrer" class="hover:underline">Portfolio</a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b border-slate-300 pb-1 mb-2">Professional Summary</h3>
+          <p class="text-xs sm:text-sm leading-relaxed text-slate-700">
+            Result-oriented Software Engineer with over 3 years of experience building, deploying, and scaling robust mobile applications, primarily in the FinTech domain. Proficient in state management (BLoC, Provider), REST API integrations, and delivering seamless user experiences. Experienced in developing complex financial platforms, including Loan Origination Systems (LOS) and comprehensive digital banking tools, with a strong focus on clean architecture and maintainable code.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b border-slate-300 pb-1 mb-2">Skills</h3>
+          <ul class="text-xs sm:text-sm space-y-1 text-slate-700">
+            <li><strong>Languages &amp; Frameworks:</strong> Dart, Flutter, HTML, CSS, Bootstrap, Figma</li>
+            <li><strong>Architecture &amp; State Management:</strong> Clean Architecture, BLoC, Provider, GetX</li>
+            <li><strong>Database &amp; Backend:</strong> SQL, Firebase (Firestore, FCM), Hive, SQFlite, REST APIs</li>
+            <li><strong>Analytics &amp; Integrations:</strong> Git, GitHub, Razorpay, CleverTap, Mixpanel, Google Maps API, OpenAI API</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b border-slate-300 pb-1 mb-2">Experience</h3>
+          <div class="space-y-4">
+            <div>
+              <div class="flex items-center justify-between text-xs sm:text-sm font-bold text-slate-900">
+                <span>Novac Technology Solutions — Senior Software Engineer</span>
+                <span class="font-mono text-xs text-slate-600">Oct 2025 – Present</span>
+              </div>
+              <ul class="list-disc list-inside text-xs sm:text-sm text-slate-700 space-y-1 mt-1">
+                <li>Spearheading the mobile development of a comprehensive Loan Origination System (LOS) product, enabling streamlined loan processing and underwriting workflows.</li>
+                <li>Designing and implementing scalable application architecture utilizing modern Flutter state management and Clean Architecture principles to ensure long-term maintainability.</li>
+                <li>Collaborating closely with cross-functional product and backend teams to translate complex financial business requirements into intuitive, highly responsive mobile interfaces.</li>
+                <li>Establishing robust code review practices and performance profiling to ensure high-quality, modular code delivery across the mobile engineering team.</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between text-xs sm:text-sm font-bold text-slate-900">
+                <span>Neurealm (formerly Gavs Technologies) — Software Engineer</span>
+                <span class="font-mono text-xs text-slate-600">Jul 2023 – Oct 2025</span>
+              </div>
+              <ul class="list-disc list-inside text-xs sm:text-sm text-slate-700 space-y-1 mt-1">
+                <li>Engineered and modularized core FinTech verticals for the ABCD Aditya Birla Capital app, including Stocks, Life Insurance, Health Insurance, and Mutual Funds.</li>
+                <li>Implemented secure payment gateways facilitating UPI, international transactions, and online bill payments, alongside a robust resume-journey feature to boost user retention.</li>
+                <li>Integrated diverse third-party SDKs, incorporating Mixpanel for advanced analytics, CleverTap for personalized engagement, and Google Maps for location-based services.</li>
+                <li>Optimized application responsiveness and reduced load times by refining state management strategies and implementing efficient local data caching using Hive.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-widest text-slate-900 border-b border-slate-300 pb-1 mb-2">Education</h3>
+          <div class="space-y-2 text-xs sm:text-sm text-slate-700">
+            <div class="flex justify-between">
+              <span><strong>Mobile Development using Flutter</strong> — Brototype, Calicut</span>
+              <span class="font-mono text-xs">2022 – 2023</span>
+            </div>
+            <div class="flex justify-between">
+              <span><strong>BA English Literature</strong> — University of Calicut</span>
+              <span class="font-mono text-xs">2019 – 2022</span>
+            </div>
+            <div class="flex justify-between">
+              <span><strong>Diploma in Functional Arabic</strong> — National Council for Promotion of Urdu Language</span>
+              <span class="font-mono text-xs">2019 – 2022</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== GITHUB DEPLOYMENT GUIDE MODAL ==================== -->
+  <div id="deploy-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/80 glass-panel no-print" role="dialog" aria-modal="true" aria-labelledby="deploy-modal-title">
+    <div class="relative w-full max-w-2xl rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 shadow-2xl space-y-5">
+      <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-4">
+        <div>
+          <span class="text-xs font-mono text-emerald-500 uppercase">Repository Update Helper</span>
+          <h3 id="deploy-modal-title" class="font-display text-xl font-bold text-slate-900 dark:text-white">Push Revamped Site to GitHub &amp; Netlify</h3>
+        </div>
+        <button type="button" onclick="closeDeployModal()" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white" aria-label="Close deploy guide">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+        Extract <code class="font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800">Personalwebsite-revamped.zip</code> into your local <code class="font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800">Personalwebsite</code> repository folder and run these commands. Netlify (<code class="font-mono">vaseemanwar.netlify.app</code>) will automatically redeploy from your <code class="font-mono">main</code> branch:
+      </p>
+      <div class="rounded-xl bg-slate-950 p-4 border border-slate-800 font-mono text-xs text-emerald-300 overflow-x-auto">
+<pre id="git-deploy-cmds">git clone https://github.com/vaseemva/Personalwebsite.git
+cd Personalwebsite
+# Copy the revamped index.html, assets/, and Vaseem_Anwar_Resume.pdf here
+git add .
+git commit -m "feat: complete UI/UX revamp for Senior Software Engineer portfolio"
+git push origin main</pre>
+      </div>
+      <div class="flex justify-end gap-2">
+        <button type="button" onclick="copyText(document.getElementById('git-deploy-cmds').innerText, 'Git commands copied to clipboard!')" class="px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-emerald-600 hover:bg-emerald-500 text-white transition-colors">
+          Copy Git Commands
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== COMMAND PALETTE MODAL (⌘K) ==================== -->
+  <div id="cmd-modal" class="fixed inset-0 z-50 hidden items-start justify-center pt-20 p-4 bg-slate-950/75 glass-panel no-print" role="dialog" aria-modal="true" aria-label="Quick Command Palette">
+    <div class="w-full max-w-lg rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xl overflow-hidden">
+      <div class="p-3.5 border-b border-slate-200 dark:border-slate-800 flex items-center gap-3">
+        <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"/></svg>
+        <input type="text" id="cmd-search-input" oninput="filterCommandPalette(this.value)" placeholder="Type a command or section (e.g. Resume, LOS, ABCD, GitHub, Theme)..." class="w-full bg-transparent text-sm text-slate-900 dark:text-white focus:outline-none">
+        <button type="button" onclick="closeCommandPalette()" class="px-2 py-0.5 text-xs font-mono rounded bg-slate-100 dark:bg-slate-800 text-slate-500">ESC</button>
+      </div>
+      <div id="cmd-results-list" class="max-h-72 overflow-y-auto p-2 space-y-1"></div>
+    </div>
+  </div>
+
+  <!-- ==================== TOAST NOTIFICATION ==================== -->
+  <div id="toast-notification" class="fixed bottom-5 right-5 z-50 hidden items-center gap-2.5 px-4 py-3 rounded-xl bg-slate-900 dark:bg-emerald-600 text-white text-xs font-mono shadow-xl border border-slate-700 dark:border-emerald-400/30 no-print" role="status" aria-live="polite">
+    <svg class="w-4 h-4 text-emerald-400 dark:text-white flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+    <span id="toast-message">Copied!</span>
+  </div>
+
+  <!-- ==================== APPLICATION JAVASCRIPT ==================== -->
+  <script>
+    const HERO_TABS = {
+      los: {
+        headerLeft: '// Current Role · Oct 2025 – Present',
+        headerRight: 'Novac Technology Solutions',
+        body: 'Spearheading mobile engineering for an enterprise <strong class="text-emerald-400">Loan Origination System (LOS)</strong>—streamlining digital underwriting, credit workflows, and modular BLoC state architecture.',
+        badges: ['Flutter BLoC', 'Clean Architecture', 'Underwriting Workflows']
+      },
+      abcd: {
+        headerLeft: '// FinTech Super-App · Jul 2023 – Oct 2025',
+        headerRight: 'Neurealm (GAVS Technologies)',
+        body: 'Engineered &amp; modularized core verticals for the <strong class="text-sky-400">ABCD Aditya Birla Capital</strong> app: Stocks, Life &amp; Health Insurance, Mutual Funds, UPI &amp; international payment gateways, plus Hive caching.',
+        badges: ['UPI & Razorpay', 'Mixpanel & CleverTap', 'Hive Local Caching']
+      },
+      arch: {
+        headerLeft: '// Engineering Philosophy',
+        headerRight: 'Clean Architecture',
+        body: 'Strict separation between Presentation (<strong class="text-emerald-400">BLoC / Provider / GetX</strong>), Domain Use Cases, and Data Repositories (<strong class="text-sky-400">REST APIs, Firebase, Hive, SQFlite</strong>) with rigorous code review &amp; profiling.',
+        badges: ['Testable Domain Layer', '60fps Profiling', 'Modular Packages']
+      }
+    };
+
+    function switchHeroTab(tabKey) {
+      const data = HERO_TABS[tabKey];
+      if (!data) return;
+      ['los', 'abcd', 'arch'].forEach(k => {
+        const btn = document.getElementById('hero-tab-' + k);
+        if (!btn) return;
+        if (k === tabKey) {
+          btn.className = 'hero-tab-btn px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-white dark:bg-slate-800 text-emerald-600 dark:text-emerald-400 shadow-sm transition-all';
+        } else {
+          btn.className = 'hero-tab-btn px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all';
+        }
+      });
+      const panel = document.getElementById('hero-panel-content');
+      if (panel) {
+        panel.innerHTML = `
+          <div class="flex items-center justify-between text-[11px] text-slate-400 border-b border-slate-800/80 pb-2">
+            <span>${data.headerLeft}</span>
+            <span class="text-emerald-400">${data.headerRight}</span>
+          </div>
+          <p class="text-slate-300 font-sans text-xs leading-relaxed pt-1">${data.body}</p>
+          <div class="flex flex-wrap gap-1.5 pt-2">
+            ${data.badges.map(b => `<span class="px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-300 text-[11px]">${b}</span>`).join('')}
+          </div>
+        `;
+      }
+    }
+
+    const ARCH_LAYERS = {
+      presentation: {
+        filename: 'presentation/bloc/loan_origination_bloc.dart',
+        code: `class LoanOriginationBloc extends Bloc<LosEvent, LosState> {
+  final SubmitUnderwritingApplication _submitApplication;
+  final ResumeSavedLoanJourney _resumeJourney;
+
+  LoanOriginationBloc(this._submitApplication, this._resumeJourney)
+      : super(const LosState.initial()) {
+    on<LosApplicationSubmitted>(_onSubmitted);
+    on<LosJourneyResumed>(_onJourneyResumed);
+  }
+
+  Future<void> _onSubmitted(
+    LosApplicationSubmitted event,
+    Emitter<LosState> emit,
+  ) async {
+    emit(state.copyWith(status: LosStatus.validatingKyc));
+    final result = await _submitApplication(event.payload);
+    result.fold(
+      (failure) => emit(state.copyWith(status: LosStatus.error, error: failure.message)),
+      (decision) => emit(state.copyWith(status: LosStatus.approved, decision: decision)),
+    );
+  }
+}`,
+        metrics: [
+          { label: 'State Management', value: 'BLoC · Provider · GetX' },
+          { label: 'Design Systems', value: 'Figma → Adaptive Flutter UI' },
+          { label: 'Quality Assurance', value: 'Frame Profiling & Code Reviews' }
+        ]
+      },
+      domain: {
+        filename: 'domain/usecases/execute_upi_wealth_transaction.dart',
+        code: `class ExecuteUpiWealthTransaction {
+  final PaymentGatewayRepository _paymentRepo;
+  final JourneyRetentionRepository _retentionRepo;
+
+  const ExecuteUpiWealthTransaction(this._paymentRepo, this._retentionRepo);
+
+  Future<Either<FinTechFailure, TransactionReceipt>> call({
+    required WealthVertical vertical, // Stocks | MutualFunds | Insurance
+    required PaymentPayload payload,
+  }) async {
+    // Persist checkpoint for seamless resume-journey recovery
+    await _retentionRepo.saveCheckpoint(vertical: vertical, step: 'payment_init');
+
+    final verification = await _paymentRepo.authorizePayment(payload);
+    return verification.fold(
+      (err) => Left(err),
+      (receipt) async {
+        await _retentionRepo.markCompleted(receipt.transactionId);
+        return Right(receipt);
+      },
+    );
+  }
+}`,
+        metrics: [
+          { label: 'Architecture Pattern', value: 'Clean Architecture (Uncle Bob)' },
+          { label: 'FinTech Verticals', value: 'LOS · Stocks · Insurance · MF' },
+          { label: 'Retention Feature', value: 'Stateful Resume-Journey Engine' }
+        ]
+      },
+      data: {
+        filename: 'data/repositories/cached_fintech_repository_impl.dart',
+        code: `class CachedFinTechRepositoryImpl implements FinTechRepository {
+  final RestApiClient _apiClient;
+  final Box<Map<dynamic, dynamic>> _hiveCacheBox;
+  final MixpanelAnalytics _mixpanel;
+  final CleverTapEngagement _cleverTap;
+
+  CachedFinTechRepositoryImpl(
+    this._apiClient,
+    this._hiveCacheBox,
+    this._mixpanel,
+    this._cleverTap,
+  );
+
+  @override
+  Future<PortfolioSnapshot> fetchPortfolio({bool forceRefresh = false}) async {
+    if (!forceRefresh && _hiveCacheBox.containsKey('portfolio_v1')) {
+      return PortfolioSnapshot.fromHive(_hiveCacheBox.get('portfolio_v1')!);
+    }
+    final remote = await _apiClient.get('/v2/wealth/portfolio');
+    await _hiveCacheBox.put('portfolio_v1', remote.toJson());
+    _mixpanel.track('Portfolio_Synced', properties: {'source': 'remote'});
+    return remote;
+  }
+}`,
+        metrics: [
+          { label: 'Local Persistence', value: 'Hive · SQFlite · SQL · Firestore' },
+          { label: 'Payments & Maps', value: 'Razorpay · UPI · Google Maps API' },
+          { label: 'Analytics & AI', value: 'Mixpanel · CleverTap · OpenAI API' }
+        ]
+      }
+    };
+
+    let currentArchKey = 'presentation';
+
+    function selectArchLayer(layerKey) {
+      const layer = ARCH_LAYERS[layerKey];
+      if (!layer) return;
+      currentArchKey = layerKey;
+
+      ['presentation', 'domain', 'data'].forEach(k => {
+        const btn = document.getElementById('arch-btn-' + k);
+        if (!btn) return;
+        if (k === layerKey) {
+          btn.className = 'arch-layer-btn text-left p-5 rounded-2xl border transition-all bg-emerald-500/10 border-emerald-500/50 dark:bg-emerald-500/10 dark:border-emerald-500/50 shadow-sm';
+        } else {
+          btn.className = 'arch-layer-btn text-left p-5 rounded-2xl border transition-all bg-white/80 dark:bg-slate-900/70 border-slate-200/80 dark:border-slate-800 hover:border-emerald-500/40';
+        }
+      });
+
+      document.getElementById('arch-code-filename').textContent = layer.filename;
+      document.getElementById('arch-code-block').textContent = layer.code;
+      document.getElementById('arch-layer-metrics').innerHTML = layer.metrics.map(m => `
+        <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+          <div class="text-[11px] font-mono text-slate-400">${m.label}</div>
+          <div class="text-xs font-semibold text-emerald-400 mt-0.5">${m.value}</div>
+        </div>
+      `).join('');
+    }
+
+    function copyCurrentArchCode() {
+      const layer = ARCH_LAYERS[currentArchKey];
+      if (layer) {
+        copyText(layer.code, 'Clean Architecture Dart snippet copied!');
+      }
+    }
+
+    const SKILLS_DATA = [
+      { name: 'Flutter', category: 'languages', tag: 'Core Framework', desc: '3+ years building production Android & iOS FinTech apps with custom animations & adaptive UI.' },
+      { name: 'Dart', category: 'languages', tag: 'Primary Language', desc: 'Asynchronous streams, isolates, strong typing, and modular package development.' },
+      { name: 'Clean Architecture', category: 'arch', tag: 'System Design', desc: 'Domain-driven separation across Presentation, Domain, and Data layers at Novac & Neurealm.' },
+      { name: 'BLoC Pattern', category: 'arch', tag: 'State Management', desc: 'Event-driven reactive state management for complex multi-step underwriting & payment flows.' },
+      { name: 'Provider', category: 'arch', tag: 'State Management', desc: 'Dependency injection & scoped reactive state across modularized FinTech verticals.' },
+      { name: 'GetX', category: 'arch', tag: 'State & Routing', desc: 'Lightweight reactive controllers, route management, and dependency bindings.' },
+      { name: 'REST APIs', category: 'data', tag: 'Backend Integration', desc: 'Secure HTTP client interceptors, token refresh pipelines, and JSON serialization.' },
+      { name: 'Hive', category: 'data', tag: 'NoSQL Caching', desc: 'Fast key-value local caching reducing load times in ABCD app & powering My Wallet.' },
+      { name: 'Firebase (Firestore & FCM)', category: 'data', tag: 'Cloud & Push', desc: 'Real-time NoSQL sync, authentication, and push notifications via Firebase Cloud Messaging.' },
+      { name: 'SQFlite & SQL', category: 'data', tag: 'Relational DB', desc: 'Structured offline relational storage, migrations, and complex query execution on device.' },
+      { name: 'Razorpay & UPI Gateways', category: 'fintech', tag: 'FinTech Payments', desc: 'Secure UPI, international transactions, and online bill payment flows.' },
+      { name: 'Mixpanel', category: 'fintech', tag: 'Product Analytics', desc: 'Event funnel instrumentation, user retention tracking, and cohort telemetry.' },
+      { name: 'CleverTap', category: 'fintech', tag: 'User Engagement', desc: 'Personalized push journeys, in-app campaigns, and resume-journey triggers.' },
+      { name: 'Google Maps API', category: 'fintech', tag: 'Location SDK', desc: 'Geolocation services, interactive map markers, and branch/service discovery.' },
+      { name: 'OpenAI API', category: 'fintech', tag: 'AI Integration', desc: 'LLM-powered conversational & intelligent workflow integrations in mobile apps.' },
+      { name: 'Figma', category: 'languages', tag: 'UI/UX Collaboration', desc: 'Translating high-fidelity design systems & tokens into pixel-accurate Flutter widgets.' },
+      { name: 'HTML5 & CSS3', category: 'languages', tag: 'Web Standards', desc: 'Semantic markup, responsive layouts, and cross-browser web interfaces.' },
+      { name: 'Bootstrap', category: 'languages', tag: 'Responsive UI', desc: 'Mobile-first responsive web grids and component prototyping.' },
+      { name: 'Git & GitHub', category: 'fintech', tag: 'Version Control', desc: 'PR governance, code review workflows, branching strategies, and CI readiness.' }
+    ];
+
+    function filterSkills(cat) {
+      document.querySelectorAll('.skill-filter-btn').forEach(btn => {
+        if (btn.getAttribute('data-skill-filter') === cat) {
+          btn.className = 'skill-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono font-medium bg-emerald-600 text-white transition-all';
+        } else {
+          btn.className = 'skill-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all';
+        }
+      });
+
+      const filtered = cat === 'all' ? SKILLS_DATA : SKILLS_DATA.filter(s => s.category === cat);
+      const grid = document.getElementById('skills-grid');
+      if (!grid) return;
+      grid.innerHTML = filtered.map(s => `
+        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-950/70 border border-slate-200/80 dark:border-slate-800/90 hover:border-emerald-500/40 transition-all">
+          <div class="flex items-center justify-between gap-2">
+            <h4 class="font-display font-bold text-sm text-slate-900 dark:text-white">${s.name}</h4>
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">${s.tag}</span>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-400 mt-1.5 leading-relaxed">${s.desc}</p>
+        </div>
+      `).join('');
+    }
+
+    const PROJECTS_DATA = [
+      {
+        id: 'novac-los',
+        title: 'Enterprise Loan Origination System (LOS)',
+        subtitle: 'Novac Technology Solutions · Senior Software Engineer (Oct 2025 – Present)',
+        category: 'fintech',
+        badge: 'Enterprise FinTech · Lead',
+        cover: 'assets/img/opt_fintech_los.jpg',
+        gallery: [
+          'assets/img/opt_fintech_los.jpg'
+        ],
+        summary: 'Comprehensive mobile Loan Origination System (LOS) enabling end-to-end digital loan processing, KYC verification, and credit underwriting workflows.',
+        bullets: [
+          'Spearheaded mobile development of the flagship Loan Origination System (LOS) product from architecture to delivery.',
+          'Implemented Clean Architecture with Flutter BLoC and Provider to isolate complex underwriting rules and multi-stage loan approval states.',
+          'Partnered with product and backend engineering teams to render dense financial underwriting data into responsive, intuitive mobile interfaces.',
+          'Established team-wide code review checklists and Dart DevTools performance profiling standards.'
+        ],
+        tags: ['Flutter', 'Dart', 'Clean Architecture', 'BLoC', 'Provider', 'REST APIs', 'LOS Underwriting'],
+        links: [
+          { label: 'Novac Technology Solutions Official Site', url: 'https://www.novactech.com/' }
+        ]
+      },
+      {
+        id: 'abcd-fintech',
+        title: 'ABCD — Aditya Birla Capital Super-App',
+        subtitle: 'Neurealm (GAVS Technologies) · Software Engineer (Jul 2023 – Oct 2025)',
+        category: 'fintech',
+        badge: 'Enterprise FinTech · Production',
+        cover: 'assets/img/opt_fintech_abcd.jpg',
+        gallery: [
+          'assets/img/opt_fintech_abcd.jpg'
+        ],
+        summary: 'Multi-vertical digital finance super-app serving millions of users across Stocks, Mutual Funds, Life & Health Insurance, UPI, and bill payments.',
+        bullets: [
+          'Engineered and modularized core FinTech verticals: Stocks, Life Insurance, Health Insurance, and Mutual Funds.',
+          'Integrated secure payment gateways supporting UPI, international transactions, and online bill payments alongside a stateful resume-journey feature to boost user retention.',
+          'Incorporated Mixpanel for granular funnel analytics, CleverTap for personalized engagement, and Google Maps API for branch locator services.',
+          'Reduced screen load latency by refining state management and introducing Hive local data caching.'
+        ],
+        tags: ['Flutter', 'Dart', 'UPI & Payments', 'Hive Caching', 'Mixpanel', 'CleverTap', 'Google Maps API'],
+        links: [
+          { label: 'ABCD App on Google Play Store', url: 'https://play.google.com/store/apps/details?id=com.adityabirlacapitaldigital.OneApp&hl=en' },
+          { label: 'ABCD App on Apple App Store', url: 'https://apps.apple.com/in/app/abcd-aditya-birla-capital-app/id6477909524' },
+          { label: 'Aditya Birla Capital ABCD Portal', url: 'https://www.adityabirlacapital.com/abcd' }
+        ]
+      },
+      {
+        id: 'my-wallet',
+        title: 'My Wallet — Personal Finance & Analytics',
+        subtitle: 'Published on Google Play Store · Flutter & Hive NoSQL',
+        category: 'flutter',
+        badge: 'Google Play Published',
+        cover: 'assets/img/opt_mywallet_cover.jpg',
+        gallery: [
+          'assets/img/opt_mywallet_cover.jpg',
+          'assets/img/opt_mw_3.jpg',
+          'assets/img/opt_mw_1.jpg',
+          'assets/img/opt_mw_2.jpg'
+        ],
+        summary: 'Offline-first personal finance manager built with Flutter and Hive, featuring interactive income/expense visual analytics and transaction categorization.',
+        bullets: [
+          'Architected a fast, zero-latency local transaction engine powered by Hive key-value storage and Shared Preferences.',
+          'Built interactive graphical spending breakdowns (line and donut charts) and custom category sorting to surface actionable savings insights.',
+          'Published to the Google Play Store (in.vaseem.my_wallet) and open-sourced on GitHub.'
+        ],
+        tags: ['Flutter', 'Dart', 'Hive Database', 'Shared Preferences', 'Data Visualization', 'Google Play'],
+        links: [
+          { label: 'View on Google Play Store', url: 'https://play.google.com/store/apps/details?id=in.vaseem.my_wallet' },
+          { label: 'GitHub Repository (my-wallet-app)', url: 'https://github.com/vaseemva/my-wallet-app' }
+        ]
+      },
+      {
+        id: 'flutter-gram',
+        title: 'FlutterGram — Developer Collaboration Network',
+        subtitle: 'Real-Time Social & Code Collaboration App · Flutter & Firebase',
+        category: 'flutter',
+        badge: 'Flutter + Firebase',
+        cover: 'assets/img/opt_fluttergram_cover.jpg',
+        gallery: [
+          'assets/img/opt_fluttergram_cover.jpg',
+          'assets/img/opt_fg_3.jpg',
+          'assets/img/opt_fg_1.jpg',
+          'assets/img/opt_fg_2.jpg'
+        ],
+        summary: 'Community platform enabling Flutter developers to connect, authenticate via Google/Firebase, share code snippets, and collaborate in real time.',
+        bullets: [
+          'Implemented Firebase Authentication (Email + Google Sign-In) and real-time Cloud Firestore streams for instant feed updates.',
+          'Utilized Shared Preferences for persistent session state and customizable developer profile preferences.',
+          'Designed clean onboarding, authentication, and collaborative feed screens.'
+        ],
+        tags: ['Flutter', 'Dart', 'Firebase Auth', 'Cloud Firestore', 'Google Sign-In', 'Shared Preferences'],
+        links: [
+          { label: 'GitHub Repository (Flutter-Gram)', url: 'https://github.com/vaseemva/Flutter-Gram' }
+        ]
+      },
+      {
+        id: 'netflix-eazy-rtc',
+        title: 'Netflix Media App & Eazy Video Meetings',
+        subtitle: 'Open-Source Cross-Platform Flutter & RTC Projects',
+        category: 'flutter',
+        badge: 'Open-Source Flutter',
+        cover: 'assets/img/opt_youtube.jpg',
+        gallery: [
+          'assets/img/opt_youtube.jpg'
+        ],
+        summary: 'Open-source Flutter implementations showcasing TMDB REST API media streaming feeds (netflix_clone) and multi-party video conferencing (Eazy-video-meetings).',
+        bullets: [
+          'Built a high-performance Netflix mobile client in Dart/Flutter consuming REST APIs with clean state management and cached network imagery.',
+          'Developed Eazy Video Meetings for low-latency video/audio collaboration across mobile and desktop targets.',
+          'Part of 38+ public repositories maintained on GitHub (@vaseemva).'
+        ],
+        tags: ['Flutter', 'Dart', 'REST APIs', 'Video RTC', 'Clean UI', 'GitHub Open Source'],
+        links: [
+          { label: 'GitHub Profile (@vaseemva — 38 Repos)', url: 'https://github.com/vaseemva' }
+        ]
+      },
+      {
+        id: 'web-clones',
+        title: 'Zomato Calicut, Hyundai Kona & YouTube Web Interfaces',
+        subtitle: 'Responsive Front-End Engineering Showcase · HTML5, CSS3 & Bootstrap',
+        category: 'web',
+        badge: 'Responsive Web UI',
+        cover: 'assets/img/opt_zomato.jpg',
+        gallery: [
+          'assets/img/opt_zomato.jpg',
+          'assets/img/opt_hyundai.jpg',
+          'assets/img/opt_youtube.jpg'
+        ],
+        summary: 'Pixel-accurate responsive web clones of Zomato (Calicut dining discovery), Hyundai KONA Electric showcase, and YouTube dark-mode interface.',
+        bullets: [
+          'Constructed responsive grid layouts, interactive navigation bars, and media carousels using semantic HTML5, modern CSS3, Bootstrap, and JavaScript.',
+          'Demonstrates strong front-end fundamentals complementing mobile UI engineering.'
+        ],
+        tags: ['HTML5', 'CSS3', 'Bootstrap', 'JavaScript', 'Responsive Design'],
+        links: [
+          { label: 'GitHub Repository (@vaseemva)', url: 'https://github.com/vaseemva' }
+        ]
+      }
+    ];
+
+    let activeModalProject = null;
+    let activeModalImgIdx = 0;
+
+    function filterProjects(cat) {
+      document.querySelectorAll('.proj-filter-btn').forEach(btn => {
+        if (btn.getAttribute('data-proj-filter') === cat) {
+          btn.className = 'proj-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium bg-emerald-600 text-white transition-all';
+        } else {
+          btn.className = 'proj-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-emerald-500/40 transition-all';
+        }
+      });
+
+      const list = cat === 'all' ? PROJECTS_DATA : PROJECTS_DATA.filter(p => p.category === cat);
+      const grid = document.getElementById('projects-grid');
+      if (!grid) return;
+
+      grid.innerHTML = list.map(p => `
+        <article class="group rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-slate-200/90 dark:border-slate-800 overflow-hidden flex flex-col justify-between hover:border-emerald-500/50 transition-all shadow-sm hover:shadow-xl">
+          <div>
+            <div class="relative h-52 overflow-hidden bg-slate-950">
+              <img src="${p.cover}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-lg text-[11px] font-mono font-semibold bg-slate-950/80 text-emerald-400 border border-emerald-500/30 backdrop-blur-md">
+                ${p.badge}
+              </span>
+              ${p.gallery.length > 1 ? `<span class="absolute top-3 right-3 px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-950/80 text-slate-300 border border-slate-700">${p.gallery.length} Screens</span>` : ''}
+            </div>
+
+            <div class="p-5 space-y-3">
+              <div class="text-[11px] font-mono text-slate-500 dark:text-slate-400 truncate">${p.subtitle}</div>
+              <h3 class="font-display font-bold text-lg text-slate-900 dark:text-white group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors">${p.title}</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-3">${p.summary}</p>
+              <div class="flex flex-wrap gap-1.5 pt-1">
+                ${p.tags.slice(0, 4).map(t => `<span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">${t}</span>`).join('')}
+              </div>
+            </div>
+          </div>
+
+          <div class="px-5 pb-5 pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between gap-2">
+            <button type="button" onclick="openProjectModal('${p.id}')" class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-emerald-600 dark:text-emerald-400 hover:underline">
+              <span>Inspect Case Study</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+            ${p.links[0] ? `<a href="${p.links[0].url}" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-slate-500 hover:text-slate-900 dark:hover:text-white">External ↗</a>` : ''}
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function openProjectModal(projId) {
+      const proj = PROJECTS_DATA.find(p => p.id === projId);
+      if (!proj) return;
+      activeModalProject = proj;
+      activeModalImgIdx = 0;
+
+      document.getElementById('modal-proj-badge').textContent = proj.badge;
+      document.getElementById('modal-proj-title').textContent = proj.title;
+      document.getElementById('modal-proj-subtitle').textContent = proj.subtitle;
+      document.getElementById('modal-proj-desc').textContent = proj.summary;
+      document.getElementById('modal-proj-bullets').innerHTML = proj.bullets.map(b => `
+        <li class="flex items-start gap-2.5">
+          <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+          <span>${b}</span>
+        </li>
+      `).join('');
+      document.getElementById('modal-proj-tags').innerHTML = proj.tags.map(t => `
+        <span class="px-2.5 py-1 rounded-lg text-xs font-mono bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800">${t}</span>
+      `).join('');
+      document.getElementById('modal-proj-links').innerHTML = proj.links.map(l => `
+        <a href="${l.url}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-xs font-mono font-semibold border border-emerald-500/20 transition-colors">
+          <span>${l.label}</span>
+          <span>↗</span>
+        </a>
+      `).join('');
+
+      renderModalGallery();
+      const modal = document.getElementById('project-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function renderModalGallery() {
+      if (!activeModalProject) return;
+      const imgs = activeModalProject.gallery;
+      const mainImg = document.getElementById('modal-proj-main-img');
+      mainImg.src = imgs[activeModalImgIdx];
+
+      const prevBtn = document.getElementById('modal-prev-img');
+      const nextBtn = document.getElementById('modal-next-img');
+      if (imgs.length <= 1) {
+        prevBtn.classList.add('hidden');
+        nextBtn.classList.add('hidden');
+      } else {
+        prevBtn.classList.remove('hidden');
+        nextBtn.classList.remove('hidden');
+      }
+
+      const thumbs = document.getElementById('modal-proj-thumbs');
+      if (imgs.length <= 1) {
+        thumbs.innerHTML = '';
+      } else {
+        thumbs.innerHTML = imgs.map((src, idx) => `
+          <button type="button" onclick="setModalImage(${idx})" class="w-14 h-14 rounded-xl overflow-hidden border-2 transition-all ${idx === activeModalImgIdx ? 'border-emerald-500 scale-105' : 'border-transparent opacity-60 hover:opacity-100'}">
+            <img src="${src}" alt="Thumbnail ${idx + 1}" class="w-full h-full object-cover">
+          </button>
+        `).join('');
+      }
+    }
+
+    function stepModalImage(delta) {
+      if (!activeModalProject) return;
+      const len = activeModalProject.gallery.length;
+      activeModalImgIdx = (activeModalImgIdx + delta + len) % len;
+      renderModalGallery();
+    }
+
+    function setModalImage(idx) {
+      activeModalImgIdx = idx;
+      renderModalGallery();
+    }
+
+    function closeProjectModal() {
+      const modal = document.getElementById('project-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function openResumeModal() {
+      const m = document.getElementById('resume-modal');
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+    }
+
+    function closeResumeModal() {
+      const m = document.getElementById('resume-modal');
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+    }
+
+    function openDeployModal() {
+      const m = document.getElementById('deploy-modal');
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+    }
+
+    function closeDeployModal() {
+      const m = document.getElementById('deploy-modal');
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+    }
+
+    function copyPlainTextResume() {
+      const plain = `VASEEM ANWAR
+Senior Software Engineer (Flutter & FinTech)
+Email: vaseemanwarafi@gmail.com | Phone: +91 859-399-3121 | Chennai, Tamil Nadu
+LinkedIn: https://www.linkedin.com/in/vaseem-anwar-37397724a | GitHub: https://github.com/vaseemva | Portfolio: https://vaseemanwar.netlify.app/
+
+PROFESSIONAL SUMMARY
+Result-oriented Software Engineer with over 3 years of experience building, deploying, and scaling robust mobile applications, primarily in the FinTech domain. Proficient in state management (BLoC, Provider), REST API integrations, and delivering seamless user experiences. Experienced in developing complex financial platforms, including Loan Origination Systems (LOS) and comprehensive digital banking tools, with a strong focus on clean architecture and maintainable code.
+
+SKILLS
+- Languages & Frameworks: Dart, Flutter, HTML, CSS, Bootstrap, Figma
+- Architecture & State Management: Clean Architecture, BLoC, Provider, GetX
+- Database & Backend: SQL, Firebase (Firestore, FCM), Hive, SQFlite, REST APIs
+- Analytics & Integrations: Git, GitHub, Razorpay, CleverTap, Mixpanel, Google Maps API, OpenAI API
+
+EXPERIENCE
+Novac Technology Solutions — Senior Software Engineer (Oct 2025 – Present)
+- Spearheading the mobile development of a comprehensive Loan Origination System (LOS) product, enabling streamlined loan processing and underwriting workflows.
+- Designing and implementing scalable application architecture utilizing modern Flutter state management and Clean Architecture principles to ensure long-term maintainability.
+- Collaborating closely with cross-functional product and backend teams to translate complex financial business requirements into intuitive, highly responsive mobile interfaces.
+- Establishing robust code review practices and performance profiling to ensure high-quality, modular code delivery across the mobile engineering team.
+
+Neurealm (formerly Gavs Technologies) — Software Engineer (Jul 2023 – Oct 2025)
+- Engineered and modularized core FinTech verticals for the ABCD Aditya Birla Capital app, including Stocks, Life Insurance, Health Insurance, and Mutual Funds.
+- Implemented secure payment gateways facilitating UPI, international transactions, and online bill payments, alongside a robust resume-journey feature to boost user retention.
+- Integrated diverse third-party SDKs, incorporating Mixpanel for advanced analytics, CleverTap for personalized engagement, and Google Maps for location-based services.
+- Optimized application responsiveness and reduced load times by refining state management strategies and implementing efficient local data caching using Hive.
+
+EDUCATION
+- Mobile Development using Flutter — Brototype, Calicut (2022 – 2023)
+- BA English Literature — University of Calicut (2019 – 2022)
+- Diploma in Functional Arabic — National Council for Promotion of Urdu Language (2019 – 2022)`;
+      copyText(plain, 'Complete plain-text resume copied to clipboard!');
+    }
+
+    const COMMAND_ITEMS = [
+      { title: 'Inspect & Print 2026 Resume', sub: 'Open official formatted CV modal', action: () => { closeCommandPalette(); openResumeModal(); } },
+      { title: 'Case Study: Novac Loan Origination System (LOS)', sub: 'Senior Software Engineer · Oct 2025 – Present', action: () => { closeCommandPalette(); openProjectModal('novac-los'); } },
+      { title: 'Case Study: ABCD Aditya Birla Capital Super-App', sub: 'Neurealm (GAVS Technologies) · Jul 2023 – Oct 2025', action: () => { closeCommandPalette(); openProjectModal('abcd-fintech'); } },
+      { title: 'Case Study: My Wallet (Google Play Store)', sub: 'Flutter + Hive Personal Finance App', action: () => { closeCommandPalette(); openProjectModal('my-wallet'); } },
+      { title: 'Case Study: FlutterGram Developer Network', sub: 'Flutter + Firebase Real-Time App', action: () => { closeCommandPalette(); openProjectModal('flutter-gram'); } },
+      { title: 'Jump to Clean Architecture Blueprint', sub: 'Section 01 · Interactive Dart/BLoC Inspector', action: () => { closeCommandPalette(); document.getElementById('architecture').scrollIntoView({ behavior: 'smooth' }); } },
+      { title: 'Jump to Career Experience Timeline', sub: 'Section 02 · Novac & Neurealm', action: () => { closeCommandPalette(); document.getElementById('experience').scrollIntoView({ behavior: 'smooth' }); } },
+      { title: 'Copy Email (vaseemanwarafi@gmail.com)', sub: 'Clipboard Action', action: () => { closeCommandPalette(); copyText('vaseemanwarafi@gmail.com', 'Email copied to clipboard!'); } },
+      { title: 'Copy Phone (+91 859-399-3121)', sub: 'Clipboard Action', action: () => { closeCommandPalette(); copyText('+918593993121', 'Phone number copied!'); } },
+      { title: 'Toggle Dark / Light Mode', sub: 'Appearance Settings', action: () => { closeCommandPalette(); toggleTheme(); } },
+      { title: 'View GitHub Deployment Commands', sub: 'Push to github.com/vaseemva/Personalwebsite', action: () => { closeCommandPalette(); openDeployModal(); } }
+    ];
+
+    function openCommandPalette() {
+      const modal = document.getElementById('cmd-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      const input = document.getElementById('cmd-search-input');
+      input.value = '';
+      filterCommandPalette('');
+      setTimeout(() => input.focus(), 50);
+    }
+
+    function closeCommandPalette() {
+      const modal = document.getElementById('cmd-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function filterCommandPalette(query) {
+      const q = (query || '').toLowerCase().trim();
+      const list = document.getElementById('cmd-results-list');
+      const matches = COMMAND_ITEMS.map((item, idx) => ({ item, idx }))
+        .filter(({ item }) => !q || item.title.toLowerCase().includes(q) || item.sub.toLowerCase().includes(q));
+
+      if (matches.length === 0) {
+        list.innerHTML = `<div class="p-4 text-center text-xs font-mono text-slate-400">No matching commands found.</div>`;
+        return;
+      }
+
+      list.innerHTML = matches.map(({ item, idx }) => `
+        <button type="button" onclick="runCommandItem(${idx})" class="w-full text-left px-3.5 py-2.5 rounded-xl hover:bg-emerald-500/10 flex items-center justify-between gap-3 transition-colors group">
+          <div>
+            <div class="text-xs font-semibold text-slate-800 dark:text-slate-100 group-hover:text-emerald-500 dark:group-hover:text-emerald-400">${item.title}</div>
+            <div class="text-[11px] font-mono text-slate-400">${item.sub}</div>
+          </div>
+          <span class="text-xs font-mono text-slate-400 group-hover:text-emerald-400">↵</span>
+        </button>
+      `).join('');
+    }
+
+    function runCommandItem(idx) {
+      if (COMMAND_ITEMS[idx]) {
+        COMMAND_ITEMS[idx].action();
+      }
+    }
+
+    function toggleTheme() {
+      const root = document.documentElement;
+      const isDark = root.classList.toggle('dark');
+      try {
+        localStorage.setItem('vaseem_theme', isDark ? 'dark' : 'light');
+      } catch (e) {}
+      showToast(isDark ? 'Switched to FinTech Dark Mode' : 'Switched to High-Contrast Light Mode');
+    }
+
+    function toggleMobileMenu() {
+      const drawer = document.getElementById('mobile-menu-drawer');
+      drawer.classList.toggle('hidden');
+    }
+
+    function closeMobileMenu() {
+      const drawer = document.getElementById('mobile-menu-drawer');
+      drawer.classList.add('hidden');
+    }
+
+    function setContactTopic(topic) {
+      const input = document.getElementById('sender-subject');
+      if (input) {
+        input.value = topic;
+        showToast('Subject updated: ' + topic);
+      }
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('sender-name').value.trim();
+      const email = document.getElementById('sender-email').value.trim();
+      const subject = document.getElementById('sender-subject').value.trim();
+      const message = document.getElementById('sender-message').value.trim();
+      if (!name || !email || !message) return;
+
+      const banner = document.getElementById('contact-status-banner');
+      banner.classList.remove('hidden');
+      banner.innerHTML = `Thank you, <strong>${name}</strong>! Your message regarding "<em>${subject}</em>" is ready. Click <a href="mailto:vaseemanwarafi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + message)}" target="_blank" rel="noopener noreferrer" class="underline font-bold">here to dispatch via your email client</a> or submit directly to FormSubmit.`;
+      showToast('Message prepared for Vaseem Anwar!');
+    }
+
+    let toastTimeout = null;
+    function showToast(msg) {
+      const toast = document.getElementById('toast-notification');
+      const label = document.getElementById('toast-message');
+      if (!toast || !label) return;
+      label.textContent = msg;
+      toast.classList.remove('hidden');
+      toast.classList.add('flex');
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('hidden');
+        toast.classList.remove('flex');
+      }, 3200);
+    }
+
+    function copyText(text, successMsg) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(successMsg || 'Copied to clipboard!');
+        }).catch(() => fallbackCopy(text, successMsg));
+      } else {
+        fallbackCopy(text, successMsg);
+      }
+    }
+
+    function fallbackCopy(text, successMsg) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        showToast(successMsg || 'Copied to clipboard!');
+      } catch (err) {
+        showToast('Copy ready');
+      }
+      document.body.removeChild(ta);
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        openCommandPalette();
+      } else if (e.key === 'Escape') {
+        closeCommandPalette();
+        closeProjectModal();
+        closeResumeModal();
+        closeDeployModal();
+      }
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      try {
+        const savedTheme = localStorage.getItem('vaseem_theme');
+        if (savedTheme === 'light') {
+          document.documentElement.classList.remove('dark');
+        }
+      } catch (e) {}
+      selectArchLayer('presentation');
+      filterSkills('all');
+      filterProjects('all');
+    });
+  </script>
 </body>
-
 </html>
